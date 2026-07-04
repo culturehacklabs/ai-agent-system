@@ -32,6 +32,21 @@
 
 ---
 
+## ⬇️ Install it the quick way — the agent zip
+
+Everything in the checklist above also ships as a single **zip** in the repo's [`install v2.0.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.0.0) folder. Each zip contains two folders that map straight onto the three buckets:
+
+- **`Project Instructions (paste)`** → **bucket 1**. A single text file — open it in any text editor and paste it into the Project's **Instructions** field. *(It's the contents of `02b_Research_Instructions.md`, saved as `.txt` so it opens on any computer without a Markdown viewer.)*
+- **`Project Documents (upload)`** → **buckets 2 + 3**. All of Agent 02b's KBs *and* the three Shared KBs. Upload every file as Project knowledge.
+
+**Five steps:** (1) download Agent 02b's zip; (2) create a new Claude Project named *"CHL Agent 02b — Research"*; (3) paste the Instructions text into the **Instructions** field; (4) upload everything in `Project Documents (upload)`; (5) start with a prompt from `KB_02b_Research_Prompting.md`.
+
+⚠ **One thing the zip can't do:** enabling the **Exa Search** connector. The zip carries the files; you still turn on Exa for this Project yourself (see the checklist above).
+
+Prefer to pull the files individually from the repo instead? The checklist above lists every one by name — see the [Install guide](../install.md) for the file-by-file route. The zip is just the fast path; it doesn't replace the repo.
+
+---
+
 ## 1. What it is
 
 **Agent 02b · Research** takes the Big Listening Inquiry from 02a and **executes the Big Listening**: large-scale digital research, plus processing any Small Listening data your team gathers. Its outputs are evidence-based and structural — it surfaces *what is there*, with a source for every claim. Interpretation is Agent 03's job.
