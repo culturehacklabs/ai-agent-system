@@ -16,27 +16,42 @@ These are the **reference documents** the agent draws on: phase theory, output t
 
 The split is intentional: the Instructions file is lean and stable; the KB files are modular and loaded on demand.
 
-**A note on file sets:** the KB set is not identical across agents. Some agents split their Actions KB (Agent 04: A/B/C; Agent 05a: A/B; Agent 05b: A/B/C/D), and some add specialised KBs (Agent 02a: `KB_02a_Listen_SmallListening.md`; Agent 02b: `KB_02b_Research_MultiInquiry.md`; Agent 03: `KB_03_Understand_MapCheck.md`). Always upload the files that actually exist for that agent — see `INDEX.md` for the authoritative per-agent file list.
+**A note on file sets:** the KB set is not identical across agents. Some agents split their Actions KB (Agent 04: A/B/C; Agent 05a: A/B; Agent 05b: A/B/C/D), and some add specialised KBs (Agent 02a: `KB_02a_Listen_SmallListening.md`; Agent 02b: `KB_02b_Research_MultiInquiry.md`; Agent 03: `KB_03_Understand_MapCheck.md`). Agent 05b has **no Tools file**. Always deploy the files that actually exist for that agent — see `INDEX.md` for the authoritative per-agent file list. If you install from the agent zip (below), the right set is already bundled.
 
 ---
 
-## Option 1 — Claude Projects (Recommended)
+## Option 1 — Claude Projects, from the agent zip (Recommended)
 
-Each agent becomes its own Project.
+Each agent ships as a single **`.zip`** in the repo's [`install v2.0.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.0.0) folder. Each agent becomes its own Project.
+
+### What's in the zip
+
+Every zip contains exactly two folders:
+
+| Folder | Contains | Goes to |
+|--------|----------|---------|
+| **`Project Instructions (paste)`** | The agent's Instructions, saved as a `.txt` file so it opens in any text editor on any computer. | Pasted into the Project **Instructions** field. |
+| **`Project Documents (upload)`** | All of the agent's `KB_[ID]_*.md` files **plus** the three shared KBs (`KB_CHL_Method.md`, `KB_AI_Fluency.md`, `KB_Agent_Directory.md`). | Uploaded as Project knowledge. |
+
+The `.txt` in the paste folder is a zip convenience only — it is the same content as the agent's canonical `[ID]_Instructions.md`. The repo and documentation always refer to the `.md` files.
 
 ### Setup steps
 
-**1. Create a new Project in Claude** — name it after the agent (e.g. "CHL Agent 01 — Point of View").
+**1. Download and unzip** the agent's zip from the [`install v2.0.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.0.0) folder.
 
-**2. Set the system prompt** — paste the contents of `[ID]_Instructions.md` into the Project "Instructions" field.
+**2. Create a new Project in Claude** — name it after the agent (e.g. "CHL Agent 01 — Ask").
 
-**3. Upload the KB files** for that agent (per `INDEX.md`), plus the three shared KBs:
-- The agent's own `KB_[ID]_*.md` files (Module, Actions or Actions_A/B/C…, Prompting and Tools **where they exist**, and any specialised KBs)
-- Shared: `KB_CHL_Method.md`, `KB_AI_Fluency.md`, `KB_Agent_Directory.md`
+**3. Set the system prompt** — open the file in `Project Instructions (paste)` and paste its contents into the Project "Instructions" field.
+
+**4. Upload the documents** — upload everything in `Project Documents (upload)` as Project knowledge (the agent's KBs and the three shared KBs together).
 
 The Instructions file tells the agent which KBs to load for which task — you do not need to paste them manually.
 
-**4. Test with a starter prompt** from the agent's `KB_[ID]_Prompting.md` (where present).
+**5. Test with a starter prompt** from the agent's `KB_[ID]_Prompting.md` (where present).
+
+### Installing file-by-file instead
+
+You don't have to use the zip. Pull the files straight from the repo per `INDEX.md`: paste the `[ID]_Instructions.md` into the Instructions field, then upload the agent's own `KB_[ID]_*.md` files (Module, Actions or Actions_A/B/C…, Prompting and Tools **where they exist**, and any specialised KBs) plus the three shared KBs. The zip is the fast path, not a replacement for the repo.
 
 ### Repeat for each agent
 Each agent has its own Project. Handoffs are manual: copy the output from one agent's conversation and paste it into the next agent's Project as input.
@@ -45,13 +60,13 @@ Each agent has its own Project. Handoffs are manual: copy the output from one ag
 
 ## Option 2 — Other LLM Services (ChatGPT, Gemini, Mistral, etc.)
 
-The agents are model-agnostic. Paste the Instructions file as the system prompt, then paste the relevant KB files into the conversation as context (Module KB always; Actions KB when producing outputs). Paste `KB_CHL_Method.md` for methodology questions and `KB_Agent_Directory.md` for navigation.
+The agents are model-agnostic, and the zip contents work the same here — the Instructions file is the system prompt, the Documents folder is the knowledge. Paste the Instructions file as the system prompt, then paste the relevant KB files into the conversation as context (Module KB always; Actions KB when producing outputs). Paste `KB_CHL_Method.md` for methodology questions and `KB_Agent_Directory.md` for navigation.
 
 ---
 
 ## Option 3 — Self-Hosted LLMs (Ollama, LM Studio, etc.)
 
-Same approach: Instructions as system prompt, KB files as context.
+Same approach, same zip contents: Instructions as system prompt, KB files as context.
 
 ### Important note for Agent 02b (Research)
 Agent 02b executes Big Listening. The Claude-native version uses **Exa Search MCP** and **Claude Research Mode**. On a self-hosted LLM or a service without web access:
