@@ -3,6 +3,7 @@
 *Fellows documentation · v2.0.0 · July 2026*
 
 **GitHub project:** <https://github.com/culturehacklabs/ai-agent-system>
+**Install files:** <https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.0.0>
 
 Welcome, Fellow. This package is your companion for putting the CHL AI Agent System to work. The system is a set of AI collaborators — one for each phase of the Culture Hack Method — that help you build a point of view, listen to the narrative space, understand it, recode it, and design and evaluate your hack. Think of the agents as skilled partners rather than decision-makers: they surface patterns, draft, and organise, but community knowledge, political judgment, and creative vision stay firmly with you. Everything here is grounded in the method's commitment to justice and an ontological shift — narratives that change how we relate to the world, never the status quo dressed in progressive language — and in a simple test you'll return to again and again: if you showed this to the community, would they recognise themselves?
 
