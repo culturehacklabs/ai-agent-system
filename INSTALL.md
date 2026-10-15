@@ -53,6 +53,8 @@ The Instructions file tells the agent which KBs to load for which task — you d
 
 You don't have to use the zip. Pull the files straight from the repo per `INDEX.md`: paste the `[ID]_Instructions.md` into the Instructions field, then upload the agent's own `KB_[ID]_*.md` files (Module, Actions or Actions_A/B/C…, Prompting and Tools **where they exist**, and any specialised KBs) plus the three shared KBs. The zip is the fast path, not a replacement for the repo.
 
+**Maintainers:** the zips are generated from `agents/`. After editing any agent file, run `python3 scripts/build_install_zips.py` to rebuild them.
+
 ### Repeat for each agent
 Each agent has its own Project. Handoffs are manual: copy the output from one agent's conversation and paste it into the next agent's Project as input.
 
