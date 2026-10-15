@@ -43,18 +43,21 @@ You don't have to use the zip. Every agent page lists its exact three-bucket che
 
 **A note on file sets:** the KB set is not identical across agents. Some split their Actions KB (Agent 04: A/B/C; Agent 05a: A/B; Agent 05b: A/B/C/D), some add a specialised KB (Agent 02a: `KB_02a_Listen_SmallListening.md`; Agent 02b: `KB_02b_Research_MultiInquiry.md`; Agent 03: `KB_03_Understand_MapCheck.md`), and one has no Tools file (Agent 05b). Always use the files that actually exist for that agent — the zip already contains the right set.
 
-## Option 2 — ChatGPT (Custom GPTs or Projects)
+## Option 2 — ChatGPT Projects
 
-The same zip works in ChatGPT. Make each agent a **Custom GPT** (easy to share with a cohort by link) or a **ChatGPT Project** (for your own work).
+The same zip works in ChatGPT. Each agent becomes its own **ChatGPT Project**, available on every plan including Free.
 
-1. **Download and unzip** the agent's zip.
-2. **Create a GPT** — *GPTs → Create → Configure* — and name it after the agent.
-3. **Instructions** — paste the file from `Project Instructions (paste)`. Every agent's Instructions file fits ChatGPT's limit.
-4. **Knowledge** — upload everything in `Project Documents (upload)`.
-5. **Capabilities** — for **Agent 02b · Research**, turn on **Web Search** and **Code Interpreter & Data Analysis**; the second gives you the CSV Database as a downloadable file. For **Agent 03 · Understand**, turn on Code Interpreter so it can read the CSV and draw the Narrative Map. Other agents need no capabilities.
-6. **Conversation starters** — copy up to four prompts from the agent's `KB_[ID]_Prompting.md`.
+1. **Privacy first** — in *Settings → Data controls*, turn off **Improve the model for everyone** before working with community material.
+2. **Download and unzip** the agent's zip.
+3. **Create a Project** — *Projects → New project* — and name it after the agent.
+4. **Instructions** — paste the file from `Project Instructions (paste)` into the Project's **Instructions**.
+5. **Files** — add everything in `Project Documents (upload)` to the Project's **Files**. *On the Free plan (5 files per Project), combine the KB files into 3–5 text files first, keeping each original file name as a heading (`# FILE: KB_…md`) — see `INSTALL.md` for details.*
+6. **Tools** — turn tools on in the chat when needed. For **Agent 02b · Research**, turn on **web search** and **code / data analysis**; the second gives you the CSV Database as a downloadable file. For **Agent 03 · Understand**, code / data analysis lets it read the CSV and draw the Narrative Map. Other agents need no tools.
+7. **Test** with a prompt from the agent's `KB_[ID]_Prompting.md`, in a new chat inside the Project.
 
-Two things work differently from Claude. ChatGPT *searches* its knowledge files rather than reading them in full, so if an output drifts from its template, ask it to *"use the template in `KB_[file].md` exactly."* And you can type `@` in a chat to call another of your GPTs, which makes handoffs quicker. In settings, turn off **Data Controls → Improve the model for everyone** before working with community material.
+One thing works differently from Claude: ChatGPT *searches* the Project's files rather than reading them in full, so if an output drifts from its template, ask it to *"use the template in `KB_[file].md` exactly."*
+
+*Custom GPTs:* creating new GPTs is no longer available on personal ChatGPT accounts, and OpenAI plans to retire them — use Projects.
 
 ## Moving between agents is manual
 

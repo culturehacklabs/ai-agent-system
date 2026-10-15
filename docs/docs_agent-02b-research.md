@@ -28,7 +28,7 @@
 - [ ] `KB_AI_Fluency.md`
 - [ ] `KB_Agent_Directory.md`
 
-⚠ **Also:** [ ] enable web search for this agent — the **Exa Search** connector in Claude, or your platform's web search elsewhere (e.g. **Web Search** + **Code Interpreter** in ChatGPT).
+⚠ **Also:** [ ] enable web search for this agent — the **Exa Search** connector in Claude, or your platform's web search elsewhere (e.g. web search + code / data analysis in ChatGPT).
 
 ---
 
@@ -41,7 +41,7 @@ Everything in the checklist above also ships as a single **zip** in the repo's [
 
 **Five steps:** (1) download Agent 02b's zip; (2) create a new Claude Project named *"CHL Agent 02b — Research"*; (3) paste the Instructions text into the **Instructions** field; (4) upload everything in `Project Documents (upload)`; (5) start with a prompt from `KB_02b_Research_Prompting.md`.
 
-**On ChatGPT or other chatbots:** use the platform's custom assistant (e.g. a ChatGPT Custom GPT or a Gemini Gem) instead of a Project — paste the same Instructions text as its instructions and upload the same documents as its knowledge. Turn on web search and a code/file tool (in ChatGPT: **Web Search** and **Code Interpreter & Data Analysis**). See the [Install guide](../install.md) for details.
+**On ChatGPT:** create a ChatGPT Project instead — paste the same Instructions text into its *Instructions* and add the same documents to its *Files* (on the Free plan, combine them into 5 files or fewer first). **On other chatbots:** use the platform's equivalent (e.g. a Gemini Gem). Turn on web search and a code/file tool in the chat (in ChatGPT: **web search** and **code / data analysis**). See the [Install guide](../install.md) for details.
 
 ⚠ **One thing the zip can't do:** enabling web search. The zip carries the files; you still turn on Exa (Claude) or your platform's web search for this agent yourself (see the checklist above).
 

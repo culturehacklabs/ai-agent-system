@@ -60,49 +60,70 @@ Each agent has its own Project. Handoffs are manual: copy the output from one ag
 
 ---
 
-## Option 2 — ChatGPT (Custom GPTs or Projects)
+## Option 2 — ChatGPT Projects
 
-The same zip works in ChatGPT. Each agent becomes its own **Custom GPT** (best for sharing with a team or cohort, since a GPT can be shared by link) or its own **ChatGPT Project** (best for your own work). Either way, the Instructions file is the instructions and the Documents folder is the knowledge.
+The same zip works in ChatGPT. Each agent becomes its own **ChatGPT Project**: the Instructions file goes into the Project's instructions and the Documents folder goes into the Project's files. Projects are available on every ChatGPT plan, including Free.
 
-### Custom GPT setup
+### Setup steps
 
-**1. Download and unzip** the agent's zip, as in Option 1.
+**1. Turn off training on your data** — in *Settings → Data controls*, turn off *Improve the model for everyone*. This matters for Small Listening material such as interview transcripts.
 
-**2. Create a GPT** — in ChatGPT, go to *GPTs → Create → Configure*. Name it after the agent (e.g. "CHL Agent 01 — Ask").
+**2. Download and unzip** the agent's zip, as in Option 1.
 
-**3. Instructions** — paste the contents of the file in `Project Instructions (paste)`. Every Instructions file fits within the Custom GPT instruction limit (about 8,000 characters; the largest, Agent 02b, is just under).
+**3. Create a Project** — in the sidebar, *Projects → New project*. Name it after the agent (e.g. "CHL Agent 01 — Ask").
 
-**4. Knowledge** — upload everything in `Project Documents (upload)`. The largest set (Agent 00) is 13 files, within the 20-file limit.
+**4. Instructions** — open the Project's settings and paste the contents of the file in `Project Instructions (paste)` into **Instructions**. Every Instructions file is kept under 8,000 characters.
 
-**5. Capabilities** — enable per agent:
+**5. Files** — add the files in `Project Documents (upload)` to the Project's **Files**. Check the file count against your plan:
 
-| Agent | Web Search | Code Interpreter & Data Analysis | Why |
+| Agent | 00 | 01 | 02a | 02b | 03 | 04 | 05a | 05b |
+|-------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| Files | 13 | 7 | 8 | 8 | 8 | 9 | 8 | 9 |
+
+| Plan | Free | Go / Plus | Pro / Business / Enterprise |
+|------|:--:|:--:|:--:|
+| Files per Project* | 5 | 25 | 40 |
+
+\*Limits at the time of writing; OpenAI changes them, so check the *File Uploads FAQ* in the ChatGPT help center if an upload is refused.
+
+**On the Free plan**, every agent has more than 5 files, and Free accounts can also only upload a few files per day. Combine the KB files into 3–5 text files before uploading. Keep each original file name as a heading, so the agent can still find files by name:
+
+```
+# FILE: KB_02b_Research_Module.md
+[contents of KB_02b_Research_Module.md]
+
+# FILE: KB_02b_Research_Actions.md
+[contents of KB_02b_Research_Actions.md]
+```
+
+A good grouping: (1) Module + Actions, (2) the agent's remaining KBs, (3) the three shared KBs.
+
+**6. Tools** — Projects don't have a fixed capabilities setting; turn tools on in the chat (the **+** / tools menu in the message box) when an agent needs them:
+
+| Agent | Web search | Code / data analysis | Why |
 |-------|:---:|:---:|-----|
-| 00 · Q&A | off | off | Answers from the knowledge only |
-| 01 · Ask | off | off | Elicitation, no tools |
-| 02a · Listen | off | off | Design only — research runs in 02b |
-| **02b · Research** | **on** | **on** | Big Listening needs web search; Code Interpreter produces the CSV Database as a downloadable file and reads a previous CSV in Iteration Mode |
-| 03 · Understand | off | on | Reads the 02b CSV; plots the Narrative Map when Mermaid doesn't render |
-| 04 · Recode | off | off | |
-| 05a · Hack | off | off | |
-| 05b · Impact | off | optional | Useful if you upload metrics or survey data |
+| 00 · Q&A | — | — | Answers from the knowledge only |
+| 01 · Ask | — | — | Elicitation, no tools |
+| 02a · Listen | — | — | Design only — research runs in 02b |
+| **02b · Research** | **on** | **on** | Big Listening needs web search; code/data analysis delivers the CSV Database as a downloadable file and reads a previous CSV in Iteration Mode |
+| 03 · Understand | — | on | Reads the 02b CSV; plots the Narrative Map when Mermaid doesn't render |
+| 04 · Recode | — | — | |
+| 05a · Hack | — | — | |
+| 05b · Impact | — | optional | Useful if you upload metrics or survey data |
 
-Image generation and Canvas are optional for every agent; the method does not depend on them.
+Tool availability and usage limits are lower on the Free plan; if code/data analysis isn't available, the CSV comes as a table instead of a file.
 
-**6. Conversation starters** — copy up to four starter prompts from the agent's `KB_[ID]_Prompting.md`, under *Starter Prompts*.
-
-**7. Test** with one of the starters before sharing.
-
-### ChatGPT Project setup
-
-Create a Project, paste the Instructions file into the Project's instructions, and add the Documents folder files to the Project's files. Turn on web search in the chat when using Agent 02b. Project instruction and file limits depend on your ChatGPT plan, so check them if an upload is refused.
+**7. Test** with a starter prompt from the agent's `KB_[ID]_Prompting.md`, in a new chat inside the Project.
 
 ### Differences from Claude Projects
 
-- **Knowledge is searched, not read in full.** ChatGPT (like many assistant platforms with uploaded files) retrieves relevant passages from the knowledge files rather than keeping every file in view. The Instructions tell the agent to look up files by name and follow templates exactly, but if an output drifts from its template, ask: *"Use the template in `KB_[file].md` exactly."*
-- **Research tools.** Agent 02b uses ChatGPT Web Search in place of Exa Search MCP. For deeper research runs you can use Deep Research in a regular ChatGPT chat and paste the results into Agent 02b, which assigns Folio IDs and builds the CSV. See `KB_02b_Research_Tools.md` for the full tool mapping.
-- **Handoffs.** Still manual, but you can type `@` in a chat to bring another of your GPTs into the conversation, e.g. call Agent 02a straight after Agent 01 has produced the Short POV.
-- **Data controls.** In ChatGPT settings, turn off *Improve the model for everyone* (Data Controls) if you don't want your conversations used for training. This matters for Small Listening material such as interview transcripts.
+- **Knowledge is searched, not read in full.** ChatGPT (like many assistant platforms with uploaded files) retrieves relevant passages from the Project's files rather than keeping every file in view. The Instructions tell the agent to look up files by name and follow templates exactly, but if an output drifts from its template, ask: *"Use the template in `KB_[file].md` exactly."*
+- **Research tools.** Agent 02b uses ChatGPT web search in place of Exa Search MCP. For deeper research runs you can use Deep Research and paste the results into Agent 02b, which assigns Folio IDs and builds the CSV. See `KB_02b_Research_Tools.md` for the full tool mapping.
+- **Handoffs.** Manual, as in Claude: copy the output from one agent's Project and paste it into a chat in the next agent's Project.
+
+### A note on Custom GPTs
+
+Earlier ChatGPT setups used Custom GPTs. Creating new GPTs is no longer available on personal ChatGPT accounts (Free, Go, Plus, Pro), and OpenAI has announced plans to retire Custom GPTs. If your Business, Enterprise, or Edu workspace still allows them, the same mapping applies — Instructions file → *Instructions*, Documents folder → *Knowledge*, tools from the table above → *Capabilities* — but prefer Projects for anything you want to keep using.
 
 ---
 
@@ -177,7 +198,7 @@ Loaded conditionally, never by default:
 
 ## Phased Rollout (current)
 
-All eight agents (00, 01, 02a, 02b, 03, 04, 05a, 05b) are deployment-ready at v2.1.0, which adds ChatGPT setup (Option 2) and expands guidance for other LLM services (Option 3). Deploy any agent as needed; handoffs between them remain manual.
+All eight agents (00, 01, 02a, 02b, 03, 04, 05a, 05b) are deployment-ready at v2.1.0, which adds ChatGPT Projects setup (Option 2) and expands guidance for other LLM services (Option 3). Deploy any agent as needed; handoffs between them remain manual.
 
 ---
 

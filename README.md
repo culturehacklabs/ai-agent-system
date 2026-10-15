@@ -87,7 +87,7 @@ KB_AI_Fluency.md            ← Ethical AI use, the 4Ds framework
 KB_Agent_Directory.md       ← System map, handoff chain, I/O contracts
 ```
 
-The exact file set varies by agent — some split their Actions KB and some add specialised KBs (e.g. `KB_02a_Listen_SmallListening.md`, `KB_02b_Research_MultiInquiry.md`, `KB_03_Understand_MapCheck.md`). A few agents do not need a Tools or Prompting file. See [`INDEX.md`](INDEX.md) for the authoritative, up-to-date list, and [`INSTALL.md`](INSTALL.md) for deployment on Claude Projects, ChatGPT (Custom GPTs / Projects), or other LLMs.
+The exact file set varies by agent — some split their Actions KB and some add specialised KBs (e.g. `KB_02a_Listen_SmallListening.md`, `KB_02b_Research_MultiInquiry.md`, `KB_03_Understand_MapCheck.md`). A few agents do not need a Tools or Prompting file. See [`INDEX.md`](INDEX.md) for the authoritative, up-to-date list, and [`INSTALL.md`](INSTALL.md) for deployment on Claude Projects, ChatGPT Projects, or other LLMs.
 
 ---
 

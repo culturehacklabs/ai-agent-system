@@ -39,7 +39,7 @@ Everything in the checklist above also ships as a single **zip** in the repo's [
 
 **Five steps:** (1) download Agent 02a's zip; (2) create a new Claude Project named *"CHL Agent 02a — Listen"*; (3) paste the Instructions text into the **Instructions** field; (4) upload everything in `Project Documents (upload)`; (5) start with a prompt from `KB_02a_Listen_Prompting.md`.
 
-**On ChatGPT or other chatbots:** use the platform's custom assistant (e.g. a ChatGPT Custom GPT or a Gemini Gem) instead of a Project — paste the same Instructions text as its instructions and upload the same documents as its knowledge. See the [Install guide](../install.md) for details.
+**On ChatGPT:** create a ChatGPT Project instead — paste the same Instructions text into its *Instructions* and add the same documents to its *Files* (on the Free plan, combine them into 5 files or fewer first). **On other chatbots:** use the platform's equivalent (e.g. a Gemini Gem). See the [Install guide](../install.md) for details.
 
 Prefer to pull the files individually from the repo instead? The checklist above lists every one by name — see the [Install guide](../install.md) for the file-by-file route. The zip is just the fast path; it doesn't replace the repo.
 

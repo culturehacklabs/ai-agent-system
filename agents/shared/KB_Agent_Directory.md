@@ -86,7 +86,7 @@ The Q&A agent is the only agent that references all module KBs. These are loaded
 
 **Claude Project:** Each agent = one Project. Instructions file = System Prompt. KB files = Project Knowledge.
 
-**ChatGPT:** Each agent = one Custom GPT (or ChatGPT Project). Instructions file = Instructions. KB files = Knowledge. Agent 02b needs Web Search and Code Interpreter enabled; Agent 03 benefits from Code Interpreter. Knowledge is retrieved by search, so consult KB files by name. See `INSTALL.md` Option 2.
+**ChatGPT:** Each agent = one ChatGPT Project. Instructions file = Project Instructions. KB files = Project Files. Agent 02b needs web search and code / data analysis turned on in the chat; Agent 03 benefits from Code Interpreter. Knowledge is retrieved by search, so consult KB files by name. See `INSTALL.md` Option 2.
 
 **Other LLMs:** Paste Instructions as system prompt. Paste relevant KBs into context on demand.
 
