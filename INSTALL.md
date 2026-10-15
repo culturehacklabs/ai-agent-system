@@ -22,7 +22,7 @@ The split is intentional: the Instructions file is lean and stable; the KB files
 
 ## Option 1 — Claude Projects, from the agent zip (Recommended)
 
-Each agent ships as a single **`.zip`** in the repo's [`install v2.0.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.0.0) folder. Each agent becomes its own Project.
+Each agent ships as a single **`.zip`** in the repo's [`install v2.1.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.1.0) folder. Each agent becomes its own Project.
 
 ### What's in the zip
 
@@ -37,7 +37,7 @@ The `.txt` in the paste folder is a zip convenience only — it is the same cont
 
 ### Setup steps
 
-**1. Download and unzip** the agent's zip from the [`install v2.0.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.0.0) folder.
+**1. Download and unzip** the agent's zip from the [`install v2.1.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.1.0) folder.
 
 **2. Create a new Project in Claude** — name it after the agent (e.g. "CHL Agent 01 — Ask").
 
@@ -53,18 +53,79 @@ The Instructions file tells the agent which KBs to load for which task — you d
 
 You don't have to use the zip. Pull the files straight from the repo per `INDEX.md`: paste the `[ID]_Instructions.md` into the Instructions field, then upload the agent's own `KB_[ID]_*.md` files (Module, Actions or Actions_A/B/C…, Prompting and Tools **where they exist**, and any specialised KBs) plus the three shared KBs. The zip is the fast path, not a replacement for the repo.
 
+**Maintainers:** the zips (standard and `chatgpt-free/` bundles) are generated from `agents/`. After editing any agent file, run `python3 scripts/build_install_zips.py` to rebuild them.
+
 ### Repeat for each agent
 Each agent has its own Project. Handoffs are manual: copy the output from one agent's conversation and paste it into the next agent's Project as input.
 
 ---
 
-## Option 2 — Other LLM Services (ChatGPT, Gemini, Mistral, etc.)
+## Option 2 — ChatGPT Projects
 
-The agents are model-agnostic, and the zip contents work the same here — the Instructions file is the system prompt, the Documents folder is the knowledge. Paste the Instructions file as the system prompt, then paste the relevant KB files into the conversation as context (Module KB always; Actions KB when producing outputs). Paste `KB_CHL_Method.md` for methodology questions and `KB_Agent_Directory.md` for navigation.
+The same zip works in ChatGPT. Each agent becomes its own **ChatGPT Project**: the Instructions file goes into the Project's instructions and the Documents folder goes into the Project's files. Projects are available on every ChatGPT plan, including Free.
+
+### Setup steps
+
+**1. Turn off training on your data** — in *Settings → Data controls*, turn off *Improve the model for everyone*. This matters for Small Listening material such as interview transcripts.
+
+**2. Download and unzip** the agent's zip, as in Option 1.
+
+**3. Create a Project** — in the sidebar, *Projects → New project*. Name it after the agent (e.g. "CHL Agent 01 — Ask").
+
+**4. Instructions** — open the Project's settings and paste the contents of the file in `Project Instructions (paste)` into **Instructions**. Every Instructions file is kept under 8,000 characters.
+
+**5. Files** — add the files in `Project Documents (upload)` to the Project's **Files**. Check the file count against your plan:
+
+| Agent | 00 | 01 | 02a | 02b | 03 | 04 | 05a | 05b |
+|-------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| Files | 13 | 7 | 8 | 8 | 8 | 9 | 8 | 9 |
+
+| Plan | Free | Go / Plus | Pro / Business / Enterprise |
+|------|:--:|:--:|:--:|
+| Files per Project* | 5 | 25 | 40 |
+
+\*Limits at the time of writing; OpenAI changes them, so check the *File Uploads FAQ* in the ChatGPT help center if an upload is refused.
+
+**On the Free plan**, every agent has more than 5 files, and Free accounts can also only upload a few files per day. Use the agent's **ChatGPT Free bundle** instead of the standard zip: [`install v2.1.0/chatgpt-free/`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.1.0/chatgpt-free) has one `[ID]_ChatGPT_Free.zip` per agent, with the same Instructions and the same KB content merged into 3–4 files (`Project Files (upload)`). Each original file starts with a `# FILE: KB_….md` heading, so the agent can still find files by name.
+
+**6. Tools** — Projects don't have a fixed capabilities setting; turn tools on in the chat (the **+** / tools menu in the message box) when an agent needs them:
+
+| Agent | Web search | Code / data analysis | Why |
+|-------|:---:|:---:|-----|
+| 00 · Q&A | — | — | Answers from the knowledge only |
+| 01 · Ask | — | — | Elicitation, no tools |
+| 02a · Listen | — | — | Design only — research runs in 02b |
+| **02b · Research** | **on** | **on** | Big Listening needs web search; code/data analysis delivers the CSV Database as a downloadable file and reads a previous CSV in Iteration Mode |
+| 03 · Understand | — | on | Reads the 02b CSV; plots the Narrative Map when Mermaid doesn't render |
+| 04 · Recode | — | — | |
+| 05a · Hack | — | — | |
+| 05b · Impact | — | optional | Useful if you upload metrics or survey data |
+
+Tool availability and usage limits are lower on the Free plan; if code/data analysis isn't available, the CSV comes as a table instead of a file.
+
+**7. Test** with a starter prompt from the agent's `KB_[ID]_Prompting.md`, in a new chat inside the Project. For Agent 02b there is a full test kit with sample inputs and pass criteria in [`tests/chatgpt/02b/`](tests/chatgpt/02b/README.md).
+
+### Differences from Claude Projects
+
+- **Knowledge is searched, not read in full.** ChatGPT (like many assistant platforms with uploaded files) retrieves relevant passages from the Project's files rather than keeping every file in view. The Instructions tell the agent to look up files by name and follow templates exactly, but if an output drifts from its template, ask: *"Use the template in `KB_[file].md` exactly."*
+- **Research tools.** Agent 02b uses ChatGPT web search in place of Exa Search MCP. For deeper research runs you can use Deep Research and paste the results into Agent 02b, which assigns Folio IDs and builds the CSV. See `KB_02b_Research_Tools.md` for the full tool mapping.
+- **Handoffs.** Manual, as in Claude: copy the output from one agent's Project and paste it into a chat in the next agent's Project.
+
+### A note on Custom GPTs
+
+Earlier ChatGPT setups used Custom GPTs. Creating new GPTs is no longer available on personal ChatGPT accounts (Free, Go, Plus, Pro), and OpenAI has announced plans to retire Custom GPTs. If your Business, Enterprise, or Edu workspace still allows them, the same mapping applies — Instructions file → *Instructions*, Documents folder → *Knowledge*, tools from the table above → *Capabilities* — but prefer Projects for anything you want to keep using.
 
 ---
 
-## Option 3 — Self-Hosted LLMs (Ollama, LM Studio, etc.)
+## Option 3 — Other LLM Services (Gemini, Mistral, etc.)
+
+The agents are model-agnostic, and the zip contents work the same here — the Instructions file is the system prompt, the Documents folder is the knowledge. Paste the Instructions file as the system prompt, then paste the relevant KB files into the conversation as context (Module KB always; Actions KB when producing outputs). Paste `KB_CHL_Method.md` for methodology questions and `KB_Agent_Directory.md` for navigation.
+
+If the service supports custom assistants with uploaded knowledge (e.g. Gemini Gems), follow the ChatGPT pattern in Option 2 instead: Instructions as the assistant's instructions, Documents folder as its knowledge, web search on for Agent 02b.
+
+---
+
+## Option 4 — Self-Hosted LLMs (Ollama, LM Studio, etc.)
 
 Same approach, same zip contents: Instructions as system prompt, KB files as context.
 
@@ -78,7 +139,7 @@ The 02b KBs describe the *process and outputs* — what to collect, how to struc
 
 ---
 
-## Option 4 — Single-Chat Use (No Project Setup)
+## Option 5 — Single-Chat Use (No Project Setup)
 
 Run any agent in one conversation: paste a brief version of the Instructions, then paste the Module + Actions KBs you need, then your input. Works well for one-off tasks and workshops.
 
@@ -127,7 +188,7 @@ Loaded conditionally, never by default:
 
 ## Phased Rollout (current)
 
-All eight agents (00, 01, 02a, 02b, 03, 04, 05a, 05b) are deployment-ready at v2.0.0. Agent 03's content fixes and Agent 04's Prompting and Tools KBs landed in this release. Deploy any agent as needed; handoffs between them remain manual.
+All eight agents (00, 01, 02a, 02b, 03, 04, 05a, 05b) are deployment-ready at v2.1.0, which adds ChatGPT Projects setup (Option 2) and expands guidance for other LLM services (Option 3). Deploy any agent as needed; handoffs between them remain manual.
 
 ---
 
@@ -140,6 +201,6 @@ All eight agents (00, 01, 02a, 02b, 03, 04, 05a, 05b) are deployment-ready at v2
 
 ---
 
-*For the full agent and file index, see [`INDEX.md`](INDEX.md). For multi-agent architecture design, see [`ARCHITECTURE.md`](ARCHITECTURE.md).*
+*For the full agent and file index, see [`INDEX.md`](INDEX.md).*
 
-*v2.0.0 · updated 2026-07-05 · CHL AI Agent System.*
+*v2.1.0 · updated 2026-10-14 · CHL AI Agent System.*

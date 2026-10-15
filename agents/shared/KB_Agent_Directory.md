@@ -86,10 +86,12 @@ The Q&A agent is the only agent that references all module KBs. These are loaded
 
 **Claude Project:** Each agent = one Project. Instructions file = System Prompt. KB files = Project Knowledge.
 
+**ChatGPT:** Each agent = one ChatGPT Project. Instructions file = Project Instructions. KB files = Project Files. Agent 02b needs web search and code / data analysis turned on in the chat; Agent 03 benefits from Code Interpreter. Knowledge is retrieved by search, so consult KB files by name. See `INSTALL.md` Option 2.
+
 **Other LLMs:** Paste Instructions as system prompt. Paste relevant KBs into context on demand.
 
 **Orchestration (future):** Each agent is a callable sub-agent. The handoff table above defines the I/O contract. The 00 Q&A Agent functions as the routing layer.
 
 ---
 
-*v2.0.0 · updated 2026-07-05 · Part of the CHL AI Agent System.*
+*v2.1.0 · updated 2026-10-14 · Part of the CHL AI Agent System.*

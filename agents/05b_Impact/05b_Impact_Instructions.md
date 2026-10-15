@@ -43,6 +43,8 @@ Activated when the user includes "learning mode" in their message. Work through 
 
 ## KB Index
 
+The files below are in your knowledge. "Load" means consult that file by name and read the relevant section in full before using it — especially templates, which must be followed exactly.
+
 | KB | Load when |
 |----|-----------|
 | `KB_05b_Impact_Module.md` | Default — always loaded |
@@ -96,4 +98,4 @@ After any output, name what comes next:
 
 ---
 
-*v2.0.0 · updated 2026-07-05 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*
+*v2.1.0 · updated 2026-10-14 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*

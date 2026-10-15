@@ -18,7 +18,7 @@ Every agent is built from three kinds of file. The structure is identical for ev
 
 ## Option 1 — Claude Projects, from the agent zip (recommended)
 
-Each agent ships as a single **`.zip`** in the repo's [`install v2.0.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.0.0) folder. Inside every zip are exactly two folders, and they map cleanly onto the three file types above:
+Each agent ships as a single **`.zip`** in the repo's [`install v2.1.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.1.0) folder. Inside every zip are exactly two folders, and they map cleanly onto the three file types above:
 
 | Zip folder | Maps to | What's inside |
 | ----- | ----- | ----- |
@@ -29,7 +29,7 @@ The `.txt` in the paste folder is a convenience for the zip only — it's the sa
 
 ### Setup steps
 
-1. **Download the agent's zip** from the [`install v2.0.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.0.0) folder and unzip it.
+1. **Download the agent's zip** from the [`install v2.1.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.1.0) folder and unzip it.
 2. **Create a new Project in Claude** — name it after the agent (e.g. *"CHL Agent 01 — Ask"*). *(This is shown in Claude, but the pattern — system prompt + knowledge files — works in any tool.)*
 3. **Paste the Instructions.** Open the text file in `Project Instructions (paste)` and paste its contents into the Project's **Instructions** field.
 4. **Upload the Documents.** Upload everything in `Project Documents (upload)` as Project knowledge — the Agent KBs and the three Shared KBs together.
@@ -42,6 +42,22 @@ The Instructions file tells the agent which KBs to load for which task — you d
 You don't have to use the zip. Every agent page lists its exact three-bucket checklist by filename, and the per-agent file set is authoritative in `INDEX.md`. Pull those files straight from the repo, paste the `[ID]_Instructions.md` into the Instructions field, and upload the rest as Project knowledge. The zip is just the fast path — it doesn't replace the repo.
 
 **A note on file sets:** the KB set is not identical across agents. Some split their Actions KB (Agent 04: A/B/C; Agent 05a: A/B; Agent 05b: A/B/C/D), some add a specialised KB (Agent 02a: `KB_02a_Listen_SmallListening.md`; Agent 02b: `KB_02b_Research_MultiInquiry.md`; Agent 03: `KB_03_Understand_MapCheck.md`), and one has no Tools file (Agent 05b). Always use the files that actually exist for that agent — the zip already contains the right set.
+
+## Option 2 — ChatGPT Projects
+
+The same zip works in ChatGPT. Each agent becomes its own **ChatGPT Project**, available on every plan including Free.
+
+1. **Privacy first** — in *Settings → Data controls*, turn off **Improve the model for everyone** before working with community material.
+2. **Download and unzip** the agent's zip.
+3. **Create a Project** — *Projects → New project* — and name it after the agent.
+4. **Instructions** — paste the file from `Project Instructions (paste)` into the Project's **Instructions**.
+5. **Files** — add everything in `Project Documents (upload)` to the Project's **Files**. *On the Free plan (5 files per Project), download the agent's **ChatGPT Free bundle** from [`install v2.1.0/chatgpt-free`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.1.0/chatgpt-free) instead: same content, merged into 3–4 files.*
+6. **Tools** — turn tools on in the chat when needed. For **Agent 02b · Research**, turn on **web search** and **code / data analysis**; the second gives you the CSV Database as a downloadable file. For **Agent 03 · Understand**, code / data analysis lets it read the CSV and draw the Narrative Map. Other agents need no tools.
+7. **Test** with a prompt from the agent's `KB_[ID]_Prompting.md`, in a new chat inside the Project.
+
+One thing works differently from Claude: ChatGPT *searches* the Project's files rather than reading them in full, so if an output drifts from its template, ask it to *"use the template in `KB_[file].md` exactly."*
+
+*Custom GPTs:* creating new GPTs is no longer available on personal ChatGPT accounts, and OpenAI plans to retire them — use Projects.
 
 ## Moving between agents is manual
 
@@ -56,7 +72,7 @@ I'm ready to continue to [next phase]. Additional context: [context]
 
 The zip contents work the same everywhere — the Instructions file is the system prompt, the Documents folder is the knowledge. Only the loading mechanism changes.
 
-**Other chatbots (Gemini, ChatGPT).** The agents are model-agnostic: paste the Instructions file as the system prompt / custom instruction, then paste the knowledge files into the project or chat as needed — the Module always, the Actions file when producing an output. *(Note: Agent 02b's live research uses the Exa Search connector in Claude; elsewhere, run research with a separate tool and paste results in.)*
+**Other chatbots (Gemini, Mistral, etc.).** The agents are model-agnostic: paste the Instructions file as the system prompt / custom instruction, then paste the knowledge files into the project or chat as needed — the Module always, the Actions file when producing an output. If the chatbot supports custom assistants with uploaded files (e.g. Gemini Gems), follow the ChatGPT pattern in Option 2. *(Note: Agent 02b's live research uses the Exa Search connector in Claude; elsewhere, run research with a separate tool and paste results in.)*
 
 **Local LLMs (Ollama, Hugging Face).** The system is model-agnostic and designed to work with local inference. Pair a local inference system (like Ollama) with a Web UI platform (like Open WebUI) to recreate the "Claude Project" capacity: the Instructions file becomes the system prompt and the KBs become the memory. Every KB is designed to stay under 2–4k tokens, to allow local use of the agents for technological autonomy.
 

@@ -34,12 +34,14 @@ New to the system? Watch the "00 — Introduction" video first, and use Agent 00
 
 ## ⬇️ Install it the quick way — the agent zip
 
-Everything in the checklist above also ships as a single **zip** in the repo's [`install v2.0.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.0.0) folder. Each zip contains two folders that map straight onto the three buckets:
+Everything in the checklist above also ships as a single **zip** in the repo's [`install v2.1.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.1.0) folder. Each zip contains two folders that map straight onto the three buckets:
 
 - **`Project Instructions (paste)`** → **bucket 1**. A single text file — open it in any text editor and paste it into the Project's **Instructions** field. *(It's the contents of `03_Understand_Instructions.md`, saved as `.txt` so it opens on any computer without a Markdown viewer.)*
 - **`Project Documents (upload)`** → **buckets 2 + 3**. All of Agent 03's KBs *and* the three Shared KBs. Upload every file as Project knowledge.
 
 **Five steps:** (1) download Agent 03's zip; (2) create a new Claude Project named *"CHL Agent 03 — Understand"*; (3) paste the Instructions text into the **Instructions** field; (4) upload everything in `Project Documents (upload)`; (5) start with a prompt from `KB_03_Understand_Prompting.md`.
+
+**On ChatGPT:** create a ChatGPT Project instead — paste the same Instructions text into its *Instructions* and add the same documents to its *Files* (on the Free plan, use the agent's ChatGPT Free bundle from `install v2.1.0/chatgpt-free`, which merges them into 3–4 files). **On other chatbots:** use the platform's equivalent (e.g. a Gemini Gem). Turn on a code/file tool in the chat if available (in ChatGPT: **code / data analysis**). See the [Install guide](../install.md) for details.
 
 Prefer to pull the files individually from the repo instead? The checklist above lists every one by name — see the [Install guide](../install.md) for the file-by-file route. The zip is just the fast path; it doesn't replace the repo.
 

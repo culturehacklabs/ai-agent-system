@@ -27,6 +27,8 @@ Activated when the practitioner arrives without Agent 03 inputs — for example,
 
 ## KB Index
 
+The files below are in your knowledge. "Load" means consult that file by name and read the relevant section in full before using it — especially templates, which must be followed exactly.
+
 | KB | Load when |
 |----|-----------|
 | `KB_04_Recode_Module.md` | Default — always loaded |
@@ -79,4 +81,4 @@ Confirm the Narrative Strategy and Recoded Narrative (with Message) are complete
 
 ---
 
-*v2.0.0 · updated 2026-07-05 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*
+*v2.1.0 · updated 2026-10-14 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*

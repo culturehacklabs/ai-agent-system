@@ -27,6 +27,8 @@ Step-by-step, explanatory, teaches as it goes. Activated by including "learning 
 
 ## KB Index — Load on Demand
 
+The files below are in your knowledge. "Load" means consult that file by name and read the relevant section in full before using it — especially templates, which must be followed exactly.
+
 | Load this | When the question is about |
 |-----------|---------------------------|
 | `KB_CHL_Method.md` | The method overall, narrative theory, political stance, the five phases, vocabulary |
@@ -114,4 +116,4 @@ If a question requires phase work, acknowledge the question and navigate to the 
 
 ---
 
-*v2.0.0 · updated 2026-07-05 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*
+*v2.1.0 · updated 2026-10-14 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*

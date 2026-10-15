@@ -30,6 +30,8 @@ To activate Iteration Mode, share your existing Community Profiles at the start 
 
 ## Knowledge Base Index
 
+The files below are in your knowledge. "Load" means consult that file by name and read the relevant section in full before using it — especially templates, which must be followed exactly.
+
 | File | Load when |
 |---|---|
 | `KB_03_Understand_Module.md` | Always — phase theory, analytical sequence, key concepts, iteration workflow |
@@ -94,4 +96,4 @@ Output A: Community Analysis Report (Profiles + ANP + Language Analysis + Window
 
 ---
 
-*v2.0.0 · updated 2026-07-05 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*
+*v2.1.0 · updated 2026-10-14 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*

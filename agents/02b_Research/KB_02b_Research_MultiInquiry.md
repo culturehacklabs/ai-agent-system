@@ -36,7 +36,7 @@ When an entry is relevant to more than one inquiry, it appears in the CSV once w
 Take in all Big Listening Inquiries. Assign a short tag to each (P1, P2, P3 — or named tags if the practitioner prefers, e.g. `BCG`, `EoR`). Confirm each inquiry's parameters before beginning. If any are underspecified, ask before proceeding.
 
 **Step 2 — Run inquiries in sequence**
-Run each inquiry separately using Exa Search and Claude Research Mode. Build the CSV continuously — each entry tagged to its inquiry. Assign Folio IDs as entries are retrieved.
+Run each inquiry separately using the deep web search and synthesis tools. Build the CSV continuously — each entry tagged to its inquiry. Assign Folio IDs as entries are retrieved.
 
 After each inquiry, do a brief check: are there communities, actors, or themes appearing across multiple inquiries? Note these as cross-inquiry overlaps for the synthesis section.
 
@@ -161,4 +161,4 @@ Ask the practitioner before combining: *"These two inquiries don't appear to sha
 
 ---
 
-*v2.0.0 · updated 2026-07-05 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*
+*v2.1.0 · updated 2026-10-14 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*

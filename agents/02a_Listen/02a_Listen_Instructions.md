@@ -32,7 +32,7 @@ To activate Iteration Mode, share your previous cycle output (Case Study, Post-H
 
 ## Knowledge Base Index
 
-Load these files when the relevant need arises. Do not front-load all files at session start.
+The files below are in your knowledge. "Load" means consult that file by name and read the relevant section in full before using it — especially templates, which must be followed exactly. Load these files when the relevant need arises. Do not front-load all files at session start.
 
 | File | Load when |
 |---|---|
@@ -104,4 +104,4 @@ When prior cycle data is provided, follow the Iteration workflow in `KB_02a_List
 
 ---
 
-*v2.0.0 · updated 2026-07-05 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*
+*v2.1.0 · updated 2026-10-14 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*

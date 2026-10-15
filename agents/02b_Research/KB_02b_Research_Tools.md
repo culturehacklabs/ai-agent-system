@@ -6,6 +6,8 @@
 
 ## Primary Tools
 
+The tools below are named for Claude. On other platforms, use the equivalent: in ChatGPT, Web Search and Deep Research (plus Code Interpreter to deliver the CSV as a file); in Gemini or other assistants, their built-in web search; with no built-in search, the practitioner runs searches in a separate tool (Perplexity, Tavily, SerpAPI, etc.) and pastes the results in. The process below stays the same. Never substitute the model's memory for retrieved sources — a remembered source has no URL or content to cite and cannot receive a Folio ID.
+
 ### Exa Search MCP
 Deep web search with full source retrieval. Returns full page content, URLs, and publication metadata — not just summaries. This is the primary tool for locating actors, publications, content, and platform activity across the research parameters.
 
@@ -31,7 +33,7 @@ Deep web search with full source retrieval. Returns full page content, URLs, and
 Synthesis and pattern recognition across retrieved source material. Available natively — no activation required.
 
 **Best used for:**
-- Identifying recurring language patterns across multiple Exa-retrieved sources
+- Identifying recurring language patterns across multiple retrieved sources
 - Summarising what a cluster of actors is saying about a topic
 - Drafting community first-draft descriptions from accumulated CSV entries
 - Writing the Narrative Landscape Summary and Key Narrative Dynamics sections
@@ -79,4 +81,4 @@ This test comes from `KB_AI_Fluency.md` — the shared ethical framework for all
 
 ---
 
-*v2.0.0 · updated 2026-07-05 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*
+*v2.1.0 · updated 2026-10-14 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*

@@ -97,7 +97,7 @@ Voices likely absent from digital data:
 - Less visible spaces: [forums, closed groups, physical spaces — flag for Small Listening]
 
 **How — Method and Documentation**
-- Big Listening tools: [Exa Search + Claude Research Mode — handled by Agent 02b]
+- Big Listening tools: [Deep web search + multi-source synthesis — handled by Agent 02b]
 - Small Listening running in parallel: [reference to Small Listening actions in the Listening Model]
 - Documentation: [how data will be stored and organised — CSV Database]
 
@@ -182,4 +182,4 @@ If a more significant change is needed, flag for Agent 01.]
 
 ---
 
-*v2.0.0 · updated 2026-07-05 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*
+*v2.1.0 · updated 2026-10-14 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*
