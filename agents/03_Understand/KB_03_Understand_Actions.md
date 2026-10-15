@@ -254,6 +254,8 @@ quadrantChart
 
 *Mermaid y-axis matches the intuitive convention — no conversion needed. Plot directly as justice/100 and ontology/100.*
 
+*If the platform does not render Mermaid in chat (e.g. ChatGPT), still provide the Mermaid code block. If a code-execution tool is available (e.g. ChatGPT Code Interpreter), also plot the same values as a labelled scatter chart: x = justice, y = ontology, both 0–100 with no conversion, quadrant lines at 50, community names as point labels.*
+
 ---
 
 ### Component 3 — Summary Table

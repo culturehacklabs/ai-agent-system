@@ -94,7 +94,7 @@ These files are shared across all agents. They are never loaded by default — o
 
 **What it does:** Executes Big Listening and structures Small Listening data. Applies the NO INVENTION principle — every claim traces to a Folio ID in the CSV. Produces the Narrative Report, CSV Database, and ANP Source Library, plus a Handoff Checklist for Agent 03.
 
-**Tools note:** The Claude-native version uses Exa Search MCP + Claude Research Mode. On other platforms, web research is handled separately (Perplexity, SerpAPI, Tavily, etc.) and fed in. The process and CSV structure stay the same.
+**Tools note:** On Claude it uses Exa Search MCP + Research mode; on ChatGPT, Web Search (+ Deep Research where available) and Code Interpreter for the CSV. On platforms without web search, web research is handled separately (Perplexity, SerpAPI, Tavily, etc.) and fed in. The process and CSV structure stay the same.
 
 | File | Contents |
 |------|---------|
@@ -102,7 +102,7 @@ These files are shared across all agents. They are never loaded by default — o
 | `KB_02b_Research_Module.md` | Research phase theory, key concepts, research process, iteration + Small-Listening-only paths, boundary with 03 |
 | `KB_02b_Research_Actions.md` | Narrative Report (A), CSV Database (B), ANP Source Library (C), Handoff Checklist templates |
 | `KB_02b_Research_Prompting.md` | Starter and power prompts for Big and Small Listening workflows |
-| `KB_02b_Research_Tools.md` | Exa Search MCP + Claude Research Mode; guidance for alternative tools |
+| `KB_02b_Research_Tools.md` | Capability-based tool guidance with a Claude / ChatGPT / no-tool mapping |
 | `KB_02b_Research_MultiInquiry.md` | Multi-Inquiry Mode workflow — multiple Big Listening Inquiries combined into one report |
 
 **Receives:** Big Listening Inquiry (+ Small Listening data) · **Produces:** Narrative Report + CSV Database + ANP Source Library + Handoff Checklist · **Passes to:** Agent 03
@@ -244,6 +244,6 @@ Scope of the v2.0.0 release: introduced file versioning; renamed `KB_AI_Fluency_
 
 ---
 
-*For deployment instructions, see [`INSTALL.md`](INSTALL.md). For multi-agent architecture, see [`ARCHITECTURE.md`](ARCHITECTURE.md).*
+*For deployment instructions, see [`INSTALL.md`](INSTALL.md).*
 
 *v2.0.0 · updated 2026-07-05 · CHL AI Agent System.*

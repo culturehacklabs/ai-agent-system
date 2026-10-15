@@ -58,18 +58,64 @@ Each agent has its own Project. Handoffs are manual: copy the output from one ag
 
 ---
 
-## Option 2 — Other LLM Services (ChatGPT, Gemini, Mistral, etc.)
+## Option 2 — ChatGPT (Custom GPTs or Projects)
 
-The agents are model-agnostic, and the zip contents work the same here — the Instructions file is the system prompt, the Documents folder is the knowledge. Paste the Instructions file as the system prompt, then paste the relevant KB files into the conversation as context (Module KB always; Actions KB when producing outputs). Paste `KB_CHL_Method.md` for methodology questions and `KB_Agent_Directory.md` for navigation.
+The same zip works in ChatGPT. Each agent becomes its own **Custom GPT** (best for sharing with a team or cohort, since a GPT can be shared by link) or its own **ChatGPT Project** (best for your own work). Either way, the Instructions file is the instructions and the Documents folder is the knowledge.
+
+### Custom GPT setup
+
+**1. Download and unzip** the agent's zip, as in Option 1.
+
+**2. Create a GPT** — in ChatGPT, go to *GPTs → Create → Configure*. Name it after the agent (e.g. "CHL Agent 01 — Ask").
+
+**3. Instructions** — paste the contents of the file in `Project Instructions (paste)`. Every Instructions file fits within the Custom GPT instruction limit (about 8,000 characters; the largest, Agent 02b, is under 7,000).
+
+**4. Knowledge** — upload everything in `Project Documents (upload)`. The largest set (Agent 00) is 13 files, within the 20-file limit.
+
+**5. Capabilities** — enable per agent:
+
+| Agent | Web Search | Code Interpreter & Data Analysis | Why |
+|-------|:---:|:---:|-----|
+| 00 · Q&A | off | off | Answers from the knowledge only |
+| 01 · Ask | off | off | Elicitation, no tools |
+| 02a · Listen | off | off | Design only — research runs in 02b |
+| **02b · Research** | **on** | **on** | Big Listening needs web search; Code Interpreter produces the CSV Database as a downloadable file and reads a previous CSV in Iteration Mode |
+| 03 · Understand | off | on | Reads the 02b CSV; plots the Narrative Map when Mermaid doesn't render |
+| 04 · Recode | off | off | |
+| 05a · Hack | off | off | |
+| 05b · Impact | off | optional | Useful if you upload metrics or survey data |
+
+Image generation and Canvas are optional for every agent; the method does not depend on them.
+
+**6. Conversation starters** — copy up to four starter prompts from the agent's `KB_[ID]_Prompting.md`, under *Starter Prompts*.
+
+**7. Test** with one of the starters before sharing.
+
+### ChatGPT Project setup
+
+Create a Project, paste the Instructions file into the Project's instructions, and add the Documents folder files to the Project's files. Turn on web search in the chat when using Agent 02b. Project instruction and file limits depend on your ChatGPT plan, so check them if an upload is refused.
+
+### Differences from Claude to be aware of
+
+- **Knowledge is searched, not read in full.** ChatGPT retrieves relevant passages from the knowledge files rather than keeping every file in view. The Instructions tell the agent to look up files by name and follow templates exactly, but if an output drifts from its template, ask: *"Use the template in `KB_[file].md` exactly."*
+- **Research tools.** Agent 02b uses ChatGPT Web Search in place of Exa Search MCP. For deeper research runs you can use Deep Research in a regular ChatGPT chat and paste the results into Agent 02b, which assigns Folio IDs and builds the CSV. See `KB_02b_Research_Tools.md` for the full tool mapping.
+- **Handoffs.** Still manual, but you can type `@` in a chat to bring another of your GPTs into the conversation, e.g. call Agent 02a straight after Agent 01 has produced the Short POV.
+- **Data controls.** In ChatGPT settings, turn off *Improve the model for everyone* (Data Controls) if you don't want your conversations used for training. This matters for Small Listening material such as interview transcripts.
 
 ---
 
-## Option 3 — Self-Hosted LLMs (Ollama, LM Studio, etc.)
+## Option 3 — Other LLM Services (Gemini, Mistral, etc.)
+
+The agents are model-agnostic, and the zip contents work the same here — the Instructions file is the system prompt, the Documents folder is the knowledge. If the service supports custom assistants with uploaded knowledge (e.g. Gemini Gems), follow the ChatGPT pattern above. Otherwise, paste the Instructions file as the system prompt, then paste the relevant KB files into the conversation as context (Module KB always; Actions KB when producing outputs). Paste `KB_CHL_Method.md` for methodology questions and `KB_Agent_Directory.md` for navigation.
+
+---
+
+## Option 4 — Self-Hosted LLMs (Ollama, LM Studio, etc.)
 
 Same approach, same zip contents: Instructions as system prompt, KB files as context.
 
 ### Important note for Agent 02b (Research)
-Agent 02b executes Big Listening. The Claude-native version uses **Exa Search MCP** and **Claude Research Mode**. On a self-hosted LLM or a service without web access:
+Agent 02b executes Big Listening. It needs deep web search and multi-source synthesis — on Claude, **Exa Search MCP** and **Research mode**; on ChatGPT, **Web Search** (and optionally Deep Research). On a self-hosted LLM or a service without web access:
 - Run web research manually and paste results in, or
 - Use a separate research tool (Perplexity, Tavily, SerpAPI, etc.) and bring outputs into the agent, or
 - Configure a web-search tool / RAG pipeline and update `KB_02b_Research_Tools.md` accordingly.
@@ -78,7 +124,7 @@ The 02b KBs describe the *process and outputs* — what to collect, how to struc
 
 ---
 
-## Option 4 — Single-Chat Use (No Project Setup)
+## Option 5 — Single-Chat Use (No Project Setup)
 
 Run any agent in one conversation: paste a brief version of the Instructions, then paste the Module + Actions KBs you need, then your input. Works well for one-off tasks and workshops.
 
@@ -140,6 +186,6 @@ All eight agents (00, 01, 02a, 02b, 03, 04, 05a, 05b) are deployment-ready at v2
 
 ---
 
-*For the full agent and file index, see [`INDEX.md`](INDEX.md). For multi-agent architecture design, see [`ARCHITECTURE.md`](ARCHITECTURE.md).*
+*For the full agent and file index, see [`INDEX.md`](INDEX.md).*
 
 *v2.0.0 · updated 2026-07-05 · CHL AI Agent System.*

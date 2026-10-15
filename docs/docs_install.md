@@ -43,6 +43,19 @@ You don't have to use the zip. Every agent page lists its exact three-bucket che
 
 **A note on file sets:** the KB set is not identical across agents. Some split their Actions KB (Agent 04: A/B/C; Agent 05a: A/B; Agent 05b: A/B/C/D), some add a specialised KB (Agent 02a: `KB_02a_Listen_SmallListening.md`; Agent 02b: `KB_02b_Research_MultiInquiry.md`; Agent 03: `KB_03_Understand_MapCheck.md`), and one has no Tools file (Agent 05b). Always use the files that actually exist for that agent — the zip already contains the right set.
 
+## Option 2 — ChatGPT (Custom GPTs or Projects)
+
+The same zip works in ChatGPT. Make each agent a **Custom GPT** (easy to share with a cohort by link) or a **ChatGPT Project** (for your own work).
+
+1. **Download and unzip** the agent's zip.
+2. **Create a GPT** — *GPTs → Create → Configure* — and name it after the agent.
+3. **Instructions** — paste the file from `Project Instructions (paste)`. Every agent's Instructions file fits ChatGPT's limit.
+4. **Knowledge** — upload everything in `Project Documents (upload)`.
+5. **Capabilities** — for **Agent 02b · Research**, turn on **Web Search** and **Code Interpreter & Data Analysis**; the second gives you the CSV Database as a downloadable file. For **Agent 03 · Understand**, turn on Code Interpreter so it can read the CSV and draw the Narrative Map. Other agents need no capabilities.
+6. **Conversation starters** — copy up to four prompts from the agent's `KB_[ID]_Prompting.md`.
+
+Two things work differently from Claude. ChatGPT *searches* its knowledge files rather than reading them in full, so if an output drifts from its template, ask it to *"use the template in `KB_[file].md` exactly."* And you can type `@` in a chat to call another of your GPTs, which makes handoffs quicker. In settings, turn off **Data Controls → Improve the model for everyone** before working with community material.
+
 ## Moving between agents is manual
 
 When an agent finishes, copy its output and paste it into the next agent's Project as input, with a short preamble:
@@ -56,7 +69,7 @@ I'm ready to continue to [next phase]. Additional context: [context]
 
 The zip contents work the same everywhere — the Instructions file is the system prompt, the Documents folder is the knowledge. Only the loading mechanism changes.
 
-**Other chatbots (Gemini, ChatGPT).** The agents are model-agnostic: paste the Instructions file as the system prompt / custom instruction, then paste the knowledge files into the project or chat as needed — the Module always, the Actions file when producing an output. *(Note: Agent 02b's live research uses the Exa Search connector in Claude; elsewhere, run research with a separate tool and paste results in.)*
+**Other chatbots (Gemini, Mistral).** The agents are model-agnostic: paste the Instructions file as the system prompt / custom instruction, then paste the knowledge files into the project or chat as needed — the Module always, the Actions file when producing an output. *(Note: Agent 02b's live research needs web search — Exa Search in Claude, Web Search in ChatGPT. Without it, run research with a separate tool and paste results in.)*
 
 **Local LLMs (Ollama, Hugging Face).** The system is model-agnostic and designed to work with local inference. Pair a local inference system (like Ollama) with a Web UI platform (like Open WebUI) to recreate the "Claude Project" capacity: the Instructions file becomes the system prompt and the KBs become the memory. Every KB is designed to stay under 2–4k tokens, to allow local use of the agents for technological autonomy.
 

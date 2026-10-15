@@ -42,6 +42,8 @@ Everything in the checklist above also ships as a single **zip** in the repo's [
 
 **Five steps:** (1) download Agent 04's zip; (2) create a new Claude Project named *"CHL Agent 04 — Recode"*; (3) paste the Instructions text into the **Instructions** field; (4) upload everything in `Project Documents (upload)`; (5) start with a prompt from `KB_04_Recode_Prompting.md`.
 
+**On ChatGPT:** create a Custom GPT instead of a Project — paste the same Instructions text into *Instructions* and upload the same documents as *Knowledge*. See the [Install guide](../install.md) for details.
+
 Prefer to pull the files individually from the repo instead? The checklist above lists every one by name — see the [Install guide](../install.md) for the file-by-file route. The zip is just the fast path; it doesn't replace the repo.
 
 ---

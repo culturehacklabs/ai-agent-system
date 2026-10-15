@@ -26,7 +26,7 @@ Ask → Listen → Understand → Recode → Hack + Evaluate
 
 Each cycle deepens the practice. Practitioners do not restart from scratch — they update their listening, sharpen their strategy, and refine their message based on what the previous hack revealed.
 
-For the full theoretical foundation — metacrisis, narrative theory, the political stance of Justice + Onto-shift — see [`KB_CHL_Method.md`](KB_CHL_Method.md).
+For the full theoretical foundation — metacrisis, narrative theory, the political stance of Justice + Onto-shift — see [`KB_CHL_Method.md`](agents/shared/KB_CHL_Method.md).
 
 ---
 
@@ -87,7 +87,7 @@ KB_AI_Fluency.md            ← Ethical AI use, the 4Ds framework
 KB_Agent_Directory.md       ← System map, handoff chain, I/O contracts
 ```
 
-The exact file set varies by agent — some split their Actions KB and some add specialised KBs (e.g. `KB_02a_Listen_SmallListening.md`, `KB_02b_Research_MultiInquiry.md`, `KB_03_Understand_MapCheck.md`). A few agents do not need a Tools or Prompting file. See [`INDEX.md`](INDEX.md) for the authoritative, up-to-date list, and [`INSTALL.md`](INSTALL.md) for deployment.
+The exact file set varies by agent — some split their Actions KB and some add specialised KBs (e.g. `KB_02a_Listen_SmallListening.md`, `KB_02b_Research_MultiInquiry.md`, `KB_03_Understand_MapCheck.md`). A few agents do not need a Tools or Prompting file. See [`INDEX.md`](INDEX.md) for the authoritative, up-to-date list, and [`INSTALL.md`](INSTALL.md) for deployment on Claude Projects, ChatGPT (Custom GPTs / Projects), or other LLMs.
 
 ---
 
@@ -95,7 +95,7 @@ The exact file set varies by agent — some split their Actions KB and some add 
 
 This toolkit is built on the Culture Hack Method curriculum developed by [Culture Hack Labs](https://www.culturehack.io/curriculum/the-culture-hack-method/). The method, concepts, and political framework are CHL's. The agents translate that curriculum into AI-assisted practice.
 
-The 4Ds are part of Anthorpic's [AI Fluency]([https://www.culturehack.io/curriculum/the-culture-hack-method/](https://anthropic.skilljar.com/ai-fluency-framework-foundations) course released under CC BY-NC-SA 4.0 license.
+The 4Ds are part of Anthropic's [AI Fluency](https://anthropic.skilljar.com/ai-fluency-framework-foundations) course released under CC BY-NC-SA 4.0 license.
 
 Rhizome Fellowship practitioners: these agents are designed with your context in mind, including the Five Pathways to Regenerative Futures as an optional framework in Agent 01.
 

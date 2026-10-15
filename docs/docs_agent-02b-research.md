@@ -2,7 +2,7 @@
 
 *Companion to the "02 — Listen" video. What the Research agent is, how to work with it, and what goes in and comes out.*
 
-**Listen is two agents**: **02a designs the research, 02b runs it.** This page covers 02b; see the Agent 02a page for the design agent. Each is its own Project — and 02b needs the **Exa Search** connector enabled.
+**Listen is two agents**: **02a designs the research, 02b runs it.** This page covers 02b; see the Agent 02a page for the design agent. Each is its own Project — and 02b needs web search enabled (the **Exa Search** connector in Claude, **Web Search** in ChatGPT).
 
 ---
 
@@ -28,7 +28,7 @@
 - [ ] `KB_AI_Fluency.md`
 - [ ] `KB_Agent_Directory.md`
 
-⚠ **Also:** [ ] enable the **Exa Search** connector for this Project.
+⚠ **Also:** [ ] enable web search for this agent — the **Exa Search** connector in Claude, or **Web Search** + **Code Interpreter** in ChatGPT.
 
 ---
 
@@ -41,7 +41,9 @@ Everything in the checklist above also ships as a single **zip** in the repo's [
 
 **Five steps:** (1) download Agent 02b's zip; (2) create a new Claude Project named *"CHL Agent 02b — Research"*; (3) paste the Instructions text into the **Instructions** field; (4) upload everything in `Project Documents (upload)`; (5) start with a prompt from `KB_02b_Research_Prompting.md`.
 
-⚠ **One thing the zip can't do:** enabling the **Exa Search** connector. The zip carries the files; you still turn on Exa for this Project yourself (see the checklist above).
+**On ChatGPT:** create a Custom GPT instead of a Project — paste the same Instructions text into *Instructions* and upload the same documents as *Knowledge*. Turn on **Web Search** and **Code Interpreter & Data Analysis** in the GPT's capabilities. See the [Install guide](../install.md) for details.
+
+⚠ **One thing the zip can't do:** enabling web search. The zip carries the files; you still turn on Exa (Claude) or Web Search (ChatGPT) for this agent yourself (see the checklist above).
 
 Prefer to pull the files individually from the repo instead? The checklist above lists every one by name — see the [Install guide](../install.md) for the file-by-file route. The zip is just the fast path; it doesn't replace the repo.
 
@@ -60,7 +62,7 @@ Two ideas to hold onto:
 
 ## 2. General instructions
 
-**Tools:** it uses the **Exa Search** connector (deep web search) and Claude **Research mode** to synthesise. **Enable Exa in your account before running 02b.** In other chatbots without Exa, run the search with a separate tool (Perplexity, Tavily, or manually) and paste results in — the process stays the same.
+**Tools:** it uses the **Exa Search** connector (deep web search) and Claude **Research mode** to synthesise. **Enable Exa in your account before running 02b.** In ChatGPT it uses **Web Search** instead, and Code Interpreter delivers the CSV as a downloadable file. In other chatbots without web search, run the search with a separate tool (Perplexity, Tavily, or manually) and paste results in — the process stays the same.
 
 **Modes:** Hacking ⚡, Learning 🌱, **Iteration 🔄** (extend the existing CSV, don't replace it), **Multi-Inquiry 🔀** (run several inquiries into one combined report), and **Small-Listening-only 🎙️** (process community material directly when no Big Listening Inquiry exists).
 
