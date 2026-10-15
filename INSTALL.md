@@ -22,7 +22,7 @@ The split is intentional: the Instructions file is lean and stable; the KB files
 
 ## Option 1 — Claude Projects, from the agent zip (Recommended)
 
-Each agent ships as a single **`.zip`** in the repo's [`install v2.0.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.0.0) folder. Each agent becomes its own Project.
+Each agent ships as a single **`.zip`** in the repo's [`install v2.1.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.1.0) folder. Each agent becomes its own Project.
 
 ### What's in the zip
 
@@ -37,7 +37,7 @@ The `.txt` in the paste folder is a zip convenience only — it is the same cont
 
 ### Setup steps
 
-**1. Download and unzip** the agent's zip from the [`install v2.0.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.0.0) folder.
+**1. Download and unzip** the agent's zip from the [`install v2.1.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.1.0) folder.
 
 **2. Create a new Project in Claude** — name it after the agent (e.g. "CHL Agent 01 — Ask").
 
@@ -70,7 +70,7 @@ The same zip works in ChatGPT. Each agent becomes its own **Custom GPT** (best f
 
 **2. Create a GPT** — in ChatGPT, go to *GPTs → Create → Configure*. Name it after the agent (e.g. "CHL Agent 01 — Ask").
 
-**3. Instructions** — paste the contents of the file in `Project Instructions (paste)`. Every Instructions file fits within the Custom GPT instruction limit (about 8,000 characters; the largest, Agent 02b, is under 7,000).
+**3. Instructions** — paste the contents of the file in `Project Instructions (paste)`. Every Instructions file fits within the Custom GPT instruction limit (about 8,000 characters; the largest, Agent 02b, is just under).
 
 **4. Knowledge** — upload everything in `Project Documents (upload)`. The largest set (Agent 00) is 13 files, within the 20-file limit.
 
@@ -97,9 +97,9 @@ Image generation and Canvas are optional for every agent; the method does not de
 
 Create a Project, paste the Instructions file into the Project's instructions, and add the Documents folder files to the Project's files. Turn on web search in the chat when using Agent 02b. Project instruction and file limits depend on your ChatGPT plan, so check them if an upload is refused.
 
-### Differences from Claude to be aware of
+### Differences from Claude Projects
 
-- **Knowledge is searched, not read in full.** ChatGPT retrieves relevant passages from the knowledge files rather than keeping every file in view. The Instructions tell the agent to look up files by name and follow templates exactly, but if an output drifts from its template, ask: *"Use the template in `KB_[file].md` exactly."*
+- **Knowledge is searched, not read in full.** ChatGPT (like many assistant platforms with uploaded files) retrieves relevant passages from the knowledge files rather than keeping every file in view. The Instructions tell the agent to look up files by name and follow templates exactly, but if an output drifts from its template, ask: *"Use the template in `KB_[file].md` exactly."*
 - **Research tools.** Agent 02b uses ChatGPT Web Search in place of Exa Search MCP. For deeper research runs you can use Deep Research in a regular ChatGPT chat and paste the results into Agent 02b, which assigns Folio IDs and builds the CSV. See `KB_02b_Research_Tools.md` for the full tool mapping.
 - **Handoffs.** Still manual, but you can type `@` in a chat to bring another of your GPTs into the conversation, e.g. call Agent 02a straight after Agent 01 has produced the Short POV.
 - **Data controls.** In ChatGPT settings, turn off *Improve the model for everyone* (Data Controls) if you don't want your conversations used for training. This matters for Small Listening material such as interview transcripts.
@@ -108,7 +108,9 @@ Create a Project, paste the Instructions file into the Project's instructions, a
 
 ## Option 3 — Other LLM Services (Gemini, Mistral, etc.)
 
-The agents are model-agnostic, and the zip contents work the same here — the Instructions file is the system prompt, the Documents folder is the knowledge. If the service supports custom assistants with uploaded knowledge (e.g. Gemini Gems), follow the ChatGPT pattern above. Otherwise, paste the Instructions file as the system prompt, then paste the relevant KB files into the conversation as context (Module KB always; Actions KB when producing outputs). Paste `KB_CHL_Method.md` for methodology questions and `KB_Agent_Directory.md` for navigation.
+The agents are model-agnostic, and the zip contents work the same here — the Instructions file is the system prompt, the Documents folder is the knowledge. Paste the Instructions file as the system prompt, then paste the relevant KB files into the conversation as context (Module KB always; Actions KB when producing outputs). Paste `KB_CHL_Method.md` for methodology questions and `KB_Agent_Directory.md` for navigation.
+
+If the service supports custom assistants with uploaded knowledge (e.g. Gemini Gems), follow the ChatGPT pattern in Option 2 instead: Instructions as the assistant's instructions, Documents folder as its knowledge, web search on for Agent 02b.
 
 ---
 
@@ -117,7 +119,7 @@ The agents are model-agnostic, and the zip contents work the same here — the I
 Same approach, same zip contents: Instructions as system prompt, KB files as context.
 
 ### Important note for Agent 02b (Research)
-Agent 02b executes Big Listening. It needs deep web search and multi-source synthesis — on Claude, **Exa Search MCP** and **Research mode**; on ChatGPT, **Web Search** (and optionally Deep Research). On a self-hosted LLM or a service without web access:
+Agent 02b executes Big Listening. The Claude-native version uses **Exa Search MCP** and **Claude Research Mode**. On a self-hosted LLM or a service without web access:
 - Run web research manually and paste results in, or
 - Use a separate research tool (Perplexity, Tavily, SerpAPI, etc.) and bring outputs into the agent, or
 - Configure a web-search tool / RAG pipeline and update `KB_02b_Research_Tools.md` accordingly.
@@ -175,7 +177,7 @@ Loaded conditionally, never by default:
 
 ## Phased Rollout (current)
 
-All eight agents (00, 01, 02a, 02b, 03, 04, 05a, 05b) are deployment-ready at v2.0.0. Agent 03's content fixes and Agent 04's Prompting and Tools KBs landed in this release. Deploy any agent as needed; handoffs between them remain manual.
+All eight agents (00, 01, 02a, 02b, 03, 04, 05a, 05b) are deployment-ready at v2.1.0, which adds ChatGPT setup (Option 2) and expands guidance for other LLM services (Option 3). Deploy any agent as needed; handoffs between them remain manual.
 
 ---
 
@@ -190,4 +192,4 @@ All eight agents (00, 01, 02a, 02b, 03, 04, 05a, 05b) are deployment-ready at v2
 
 *For the full agent and file index, see [`INDEX.md`](INDEX.md).*
 
-*v2.0.0 · updated 2026-07-05 · CHL AI Agent System.*
+*v2.1.0 · updated 2026-10-14 · CHL AI Agent System.*

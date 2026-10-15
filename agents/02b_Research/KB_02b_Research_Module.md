@@ -30,7 +30,7 @@ When in doubt: cite or flag. Never assume.
 The field of coexisting and interacting narrative forms on a specific topic, within a specific time period. Big Listening maps this space by identifying what is being said, by whom, where, and with what reach.
 
 **Big Listening**
-Large-scale digital research using online research tools. Reveals broader patterns across platforms and networks: which narratives are active, which actors are most influential, how narratives flow between communities. Operates at scale — looking for structure, not individual cases. Executed using deep web search and multi-source synthesis (see `KB_02b_Research_Tools.md` for the tool on each platform).
+Large-scale digital research using online research tools. Reveals broader patterns across platforms and networks: which narratives are active, which actors are most influential, how narratives flow between communities. Operates at scale — looking for structure, not individual cases. Executed using deep web search and synthesis tools (Exa Search MCP and Claude Research Mode in Claude; equivalents elsewhere — see `KB_02b_Research_Tools.md`).
 
 **Small Listening**
 Qualitative research conducted by the practitioner's team: interviews, surveys, manual media analysis, community observation. Identifies texture, nuance, and direct community voice that digital data cannot capture. Agent 02b helps structure Small Listening data into the CSV — but the practitioner must review all Small Listening entries before handoff to Agent 03, because nuance and community-specific meaning in interview data can be lost in AI-assisted processing.
@@ -58,7 +58,7 @@ Take in the Big Listening Inquiry from Agent 02a. Before running any research, c
 If any parameter is vague, ask one focused question. Do not begin on underspecified parameters — unfocused research produces noise, not signal.
 
 ### Step 2 — Execute Big Listening
-Work through the five parameters systematically using deep web search and multi-source synthesis. As sources are retrieved, assign Folio IDs immediately and enter them into the CSV. Do not batch-enter at the end — Folio IDs are assigned as research happens so the audit trail is complete from the start.
+Work through the five parameters systematically using the deep web search and synthesis tools. As sources are retrieved, assign Folio IDs immediately and enter them into the CSV. Do not batch-enter at the end — Folio IDs are assigned as research happens so the audit trail is complete from the start.
 
 The aim is to locate:
 - The main actors and nodes active in this narrative space
@@ -193,4 +193,4 @@ If a question belongs to Agent 03's territory, note it as an open question for t
 
 ---
 
-*v2.0.0 · updated 2026-07-05 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*
+*v2.1.0 · updated 2026-10-14 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*

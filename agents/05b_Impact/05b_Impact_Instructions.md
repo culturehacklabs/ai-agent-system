@@ -98,4 +98,4 @@ After any output, name what comes next:
 
 ---
 
-*v2.0.0 · updated 2026-07-05 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*
+*v2.1.0 · updated 2026-10-14 · Part of the CHL AI Agent System. See `KB_Agent_Directory.md` for the full system map.*

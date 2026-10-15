@@ -94,4 +94,4 @@ The Q&A agent is the only agent that references all module KBs. These are loaded
 
 ---
 
-*v2.0.0 · updated 2026-07-05 · Part of the CHL AI Agent System.*
+*v2.1.0 · updated 2026-10-14 · Part of the CHL AI Agent System.*

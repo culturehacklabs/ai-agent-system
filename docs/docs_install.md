@@ -18,7 +18,7 @@ Every agent is built from three kinds of file. The structure is identical for ev
 
 ## Option 1 — Claude Projects, from the agent zip (recommended)
 
-Each agent ships as a single **`.zip`** in the repo's [`install v2.0.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.0.0) folder. Inside every zip are exactly two folders, and they map cleanly onto the three file types above:
+Each agent ships as a single **`.zip`** in the repo's [`install v2.1.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.1.0) folder. Inside every zip are exactly two folders, and they map cleanly onto the three file types above:
 
 | Zip folder | Maps to | What's inside |
 | ----- | ----- | ----- |
@@ -29,7 +29,7 @@ The `.txt` in the paste folder is a convenience for the zip only — it's the sa
 
 ### Setup steps
 
-1. **Download the agent's zip** from the [`install v2.0.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.0.0) folder and unzip it.
+1. **Download the agent's zip** from the [`install v2.1.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.1.0) folder and unzip it.
 2. **Create a new Project in Claude** — name it after the agent (e.g. *"CHL Agent 01 — Ask"*). *(This is shown in Claude, but the pattern — system prompt + knowledge files — works in any tool.)*
 3. **Paste the Instructions.** Open the text file in `Project Instructions (paste)` and paste its contents into the Project's **Instructions** field.
 4. **Upload the Documents.** Upload everything in `Project Documents (upload)` as Project knowledge — the Agent KBs and the three Shared KBs together.
@@ -69,7 +69,7 @@ I'm ready to continue to [next phase]. Additional context: [context]
 
 The zip contents work the same everywhere — the Instructions file is the system prompt, the Documents folder is the knowledge. Only the loading mechanism changes.
 
-**Other chatbots (Gemini, Mistral).** The agents are model-agnostic: paste the Instructions file as the system prompt / custom instruction, then paste the knowledge files into the project or chat as needed — the Module always, the Actions file when producing an output. *(Note: Agent 02b's live research needs web search — Exa Search in Claude, Web Search in ChatGPT. Without it, run research with a separate tool and paste results in.)*
+**Other chatbots (Gemini, Mistral, etc.).** The agents are model-agnostic: paste the Instructions file as the system prompt / custom instruction, then paste the knowledge files into the project or chat as needed — the Module always, the Actions file when producing an output. If the chatbot supports custom assistants with uploaded files (e.g. Gemini Gems), follow the ChatGPT pattern in Option 2. *(Note: Agent 02b's live research uses the Exa Search connector in Claude; elsewhere, run research with a separate tool and paste results in.)*
 
 **Local LLMs (Ollama, Hugging Face).** The system is model-agnostic and designed to work with local inference. Pair a local inference system (like Ollama) with a Web UI platform (like Open WebUI) to recreate the "Claude Project" capacity: the Instructions file becomes the system prompt and the KBs become the memory. Every KB is designed to stay under 2–4k tokens, to allow local use of the agents for technological autonomy.
 

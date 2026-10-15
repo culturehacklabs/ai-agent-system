@@ -109,4 +109,4 @@ This toolkit is designed to grow with practice. If you use these agents, encount
 
 *Built for the practitioners working to rewild the narrative space.*
 
-*v2.0.0 · updated 2026-07-05 · CHL AI Agent System.*
+*v2.1.0 · updated 2026-10-14 · CHL AI Agent System.*

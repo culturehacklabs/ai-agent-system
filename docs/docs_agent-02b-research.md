@@ -2,7 +2,7 @@
 
 *Companion to the "02 — Listen" video. What the Research agent is, how to work with it, and what goes in and comes out.*
 
-**Listen is two agents**: **02a designs the research, 02b runs it.** This page covers 02b; see the Agent 02a page for the design agent. Each is its own Project — and 02b needs web search enabled (the **Exa Search** connector in Claude, **Web Search** in ChatGPT).
+**Listen is two agents**: **02a designs the research, 02b runs it.** This page covers 02b; see the Agent 02a page for the design agent. Each is its own Project — and 02b needs web search enabled (the **Exa Search** connector in Claude, or your platform's web search elsewhere).
 
 ---
 
@@ -28,22 +28,22 @@
 - [ ] `KB_AI_Fluency.md`
 - [ ] `KB_Agent_Directory.md`
 
-⚠ **Also:** [ ] enable web search for this agent — the **Exa Search** connector in Claude, or **Web Search** + **Code Interpreter** in ChatGPT.
+⚠ **Also:** [ ] enable web search for this agent — the **Exa Search** connector in Claude, or your platform's web search elsewhere (e.g. **Web Search** + **Code Interpreter** in ChatGPT).
 
 ---
 
 ## ⬇️ Install it the quick way — the agent zip
 
-Everything in the checklist above also ships as a single **zip** in the repo's [`install v2.0.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.0.0) folder. Each zip contains two folders that map straight onto the three buckets:
+Everything in the checklist above also ships as a single **zip** in the repo's [`install v2.1.0`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.1.0) folder. Each zip contains two folders that map straight onto the three buckets:
 
 - **`Project Instructions (paste)`** → **bucket 1**. A single text file — open it in any text editor and paste it into the Project's **Instructions** field. *(It's the contents of `02b_Research_Instructions.md`, saved as `.txt` so it opens on any computer without a Markdown viewer.)*
 - **`Project Documents (upload)`** → **buckets 2 + 3**. All of Agent 02b's KBs *and* the three Shared KBs. Upload every file as Project knowledge.
 
 **Five steps:** (1) download Agent 02b's zip; (2) create a new Claude Project named *"CHL Agent 02b — Research"*; (3) paste the Instructions text into the **Instructions** field; (4) upload everything in `Project Documents (upload)`; (5) start with a prompt from `KB_02b_Research_Prompting.md`.
 
-**On ChatGPT:** create a Custom GPT instead of a Project — paste the same Instructions text into *Instructions* and upload the same documents as *Knowledge*. Turn on **Web Search** and **Code Interpreter & Data Analysis** in the GPT's capabilities. See the [Install guide](../install.md) for details.
+**On ChatGPT or other chatbots:** use the platform's custom assistant (e.g. a ChatGPT Custom GPT or a Gemini Gem) instead of a Project — paste the same Instructions text as its instructions and upload the same documents as its knowledge. Turn on web search and a code/file tool (in ChatGPT: **Web Search** and **Code Interpreter & Data Analysis**). See the [Install guide](../install.md) for details.
 
-⚠ **One thing the zip can't do:** enabling web search. The zip carries the files; you still turn on Exa (Claude) or Web Search (ChatGPT) for this agent yourself (see the checklist above).
+⚠ **One thing the zip can't do:** enabling web search. The zip carries the files; you still turn on Exa (Claude) or your platform's web search for this agent yourself (see the checklist above).
 
 Prefer to pull the files individually from the repo instead? The checklist above lists every one by name — see the [Install guide](../install.md) for the file-by-file route. The zip is just the fast path; it doesn't replace the repo.
 

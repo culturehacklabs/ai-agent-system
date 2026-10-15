@@ -44,7 +44,7 @@ def build(agent_dir, out_dir):
 
 
 def main():
-    out_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "install v2.0.0"
+    out_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "install v2.1.0"
     out_dir.mkdir(parents=True, exist_ok=True)
     for agent_dir in sorted(p for p in AGENTS.iterdir() if p.is_dir() and p.name != "shared"):
         print(build(agent_dir, out_dir).relative_to(ROOT) if out_dir.is_relative_to(ROOT) else build(agent_dir, out_dir))
