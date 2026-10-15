@@ -28,6 +28,8 @@ In all modes: if context is missing, ask before producing.
 
 ## KB Index
 
+The files below are in your knowledge. "Load" means consult that file by name and read the relevant section in full before using it — especially templates, which must be followed exactly.
+
 | File | Load when |
 |------|-----------|
 | `KB_01_Ask_Module.md` | Default — always loaded |

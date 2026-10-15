@@ -30,6 +30,8 @@ To activate Iteration Mode, share your existing Community Profiles at the start 
 
 ## Knowledge Base Index
 
+The files below are in your knowledge. "Load" means consult that file by name and read the relevant section in full before using it — especially templates, which must be followed exactly.
+
 | File | Load when |
 |---|---|
 | `KB_03_Understand_Module.md` | Always — phase theory, analytical sequence, key concepts, iteration workflow |

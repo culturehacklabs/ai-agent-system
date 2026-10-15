@@ -4,10 +4,20 @@
 
 ---
 
-## Primary Tools
+## Primary Capabilities
 
-### Exa Search MCP
-Deep web search with full source retrieval. Returns full page content, URLs, and publication metadata — not just summaries. This is the primary tool for locating actors, publications, content, and platform activity across the research parameters.
+This agent relies on two capabilities. The process below is the same on every platform — only the tool that provides each capability changes.
+
+| Capability | Claude | ChatGPT | No built-in tool |
+|---|---|---|---|
+| Deep web search | Exa Search MCP | Web Search (enable in the GPT / Project) | Practitioner runs searches (Perplexity, Tavily, SerpAPI, etc.) and pastes results |
+| Multi-source synthesis | Research mode | Deep Research (where available) — otherwise the model's own synthesis over retrieved sources | The model's own synthesis over pasted sources |
+| CSV file output | Table in the response (or a file artifact) | Code Interpreter — deliver a downloadable `.csv` | Table in the response |
+
+If the deep web search capability is missing, say so at the start of the session. Never substitute knowledge from memory for retrieved sources — a source the agent "remembers" has no URL, date, or page content to cite and cannot receive a Folio ID.
+
+### Deep Web Search
+Retrieves full page content, URLs, and publication metadata — not just summaries. This is the primary capability for locating actors, publications, content, and platform activity across the research parameters.
 
 **Best used for:**
 - Searching for specific actors, organisations, or publications named in the Who parameters
@@ -20,24 +30,30 @@ Deep web search with full source retrieval. Returns full page content, URLs, and
 - Start with the most specific terms first — actor names, organisation names, specific hashtags
 - Then broaden to thematic keywords to find actors not named in the parameters
 - Use platform-specific searches where possible (e.g. searching for content from specific publications or accounts)
-- Search within the defined timeframe — check date filters are applied
+- Search within the defined timeframe — check date filters are applied, or include the date range in the query when the tool has no date filter
 - For each community, run at least 3–4 distinct search queries to avoid missing clusters
+- Some search tools return snippets rather than full pages. When only a snippet is available, open the source before citing it; if it cannot be opened, record the entry with a note that the full content was not verified
 
 **Assigning Folio IDs:** Assign a Folio ID to each retrieved source at the moment of retrieval — before reading or synthesising. This ensures every CSV entry exists before any claim is made about it.
 
 ---
 
-### Claude Research Mode (Native)
-Synthesis and pattern recognition across retrieved source material. Available natively — no activation required.
+### Multi-Source Synthesis
+Pattern recognition across retrieved source material.
 
 **Best used for:**
-- Identifying recurring language patterns across multiple Exa-retrieved sources
+- Identifying recurring language patterns across multiple retrieved sources
 - Summarising what a cluster of actors is saying about a topic
 - Drafting community first-draft descriptions from accumulated CSV entries
 - Writing the Narrative Landscape Summary and Key Narrative Dynamics sections
 - Building ANP Source Library entry descriptions
 
-**Important constraint:** Claude Research Mode synthesises — it does not independently verify. All synthesis must be traceable to sources already in the CSV. If the synthesis produces a claim that cannot be traced to a Folio ID, it is flagged as an unverified pattern, not stated as a finding.
+**Important constraint:** Synthesis does not independently verify. All synthesis must be traceable to sources already in the CSV. If the synthesis produces a claim that cannot be traced to a Folio ID, it is flagged as an unverified pattern, not stated as a finding. Autonomous research modes (Claude Research mode, ChatGPT Deep Research) may surface their own sources — every such source must be entered into the CSV with a Folio ID before any claim drawn from it appears in an output.
+
+---
+
+### CSV File Output
+Where the platform can generate files (e.g. ChatGPT Code Interpreter), deliver the CSV Database as a downloadable `.csv` file using the exact columns in `KB_02b_Research_Actions.md`, in addition to showing it as a table. In Iteration Mode, load the previous CSV the practitioner uploads and append to it — do not regenerate existing rows.
 
 ---
 

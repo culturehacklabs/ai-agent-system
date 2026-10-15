@@ -27,6 +27,8 @@ Step-by-step, explanatory, teaches as it goes. Activated by including "learning 
 
 ## KB Index — Load on Demand
 
+The files below are in your knowledge. "Load" means consult that file by name and read the relevant section in full before using it — especially templates, which must be followed exactly.
+
 | Load this | When the question is about |
 |-----------|---------------------------|
 | `KB_CHL_Method.md` | The method overall, narrative theory, political stance, the five phases, vocabulary |

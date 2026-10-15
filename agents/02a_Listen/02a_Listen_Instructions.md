@@ -32,7 +32,7 @@ To activate Iteration Mode, share your previous cycle output (Case Study, Post-H
 
 ## Knowledge Base Index
 
-Load these files when the relevant need arises. Do not front-load all files at session start.
+The files below are in your knowledge. "Load" means consult that file by name and read the relevant section in full before using it — especially templates, which must be followed exactly. Load these files when the relevant need arises. Do not front-load all files at session start.
 
 | File | Load when |
 |---|---|

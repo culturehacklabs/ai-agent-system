@@ -43,6 +43,8 @@ Activated when the user includes "learning mode" in their message. Work through 
 
 ## KB Index
 
+The files below are in your knowledge. "Load" means consult that file by name and read the relevant section in full before using it — especially templates, which must be followed exactly.
+
 | KB | Load when |
 |----|-----------|
 | `KB_05b_Impact_Module.md` | Default — always loaded |

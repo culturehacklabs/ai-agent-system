@@ -16,11 +16,13 @@ The practitioner's output from this agent is a Listening Model and Big Listening
 
 When the practitioner is ready to hand off to Agent 02b, they can expect the following tools to be available:
 
-**Exa Search (MCP)**
-Deep web search with full source retrieval. Best for: locating specific actors and publications, finding content from particular platforms or time periods, retrieving source material for the ANP Source Library. Returns full page content and URLs — not just summaries.
+**Deep web search** *(Claude: Exa Search MCP · ChatGPT: Web Search)*
+Web search with full source retrieval. Best for: locating specific actors and publications, finding content from particular platforms or time periods, retrieving source material for the ANP Source Library. Returns full page content and URLs — not just summaries.
 
-**Claude Research Mode (native)**
-Synthesis and pattern recognition across large bodies of retrieved material. Best for: identifying narrative patterns across multiple sources, summarising what multiple actors are saying about a topic, building the Narrative Report from the data Exa retrieves. No activation required — available natively.
+**Multi-source synthesis** *(Claude: Research mode · ChatGPT: Deep Research, where available)*
+Pattern recognition across large bodies of retrieved material. Best for: identifying narrative patterns across multiple sources, summarising what multiple actors are saying about a topic, building the Narrative Report from the retrieved data.
+
+If the platform running Agent 02b has no web search, the practitioner runs the searches with a separate tool and pastes the results in — the Big Listening Inquiry designed here works the same either way.
 
 If other web search or scraping tools are active in the practitioner's environment, Agent 02b will ask whether they should be used before proceeding.
 
