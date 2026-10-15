@@ -53,7 +53,7 @@ The Instructions file tells the agent which KBs to load for which task — you d
 
 You don't have to use the zip. Pull the files straight from the repo per `INDEX.md`: paste the `[ID]_Instructions.md` into the Instructions field, then upload the agent's own `KB_[ID]_*.md` files (Module, Actions or Actions_A/B/C…, Prompting and Tools **where they exist**, and any specialised KBs) plus the three shared KBs. The zip is the fast path, not a replacement for the repo.
 
-**Maintainers:** the zips are generated from `agents/`. After editing any agent file, run `python3 scripts/build_install_zips.py` to rebuild them.
+**Maintainers:** the zips (standard and `chatgpt-free/` bundles) are generated from `agents/`. After editing any agent file, run `python3 scripts/build_install_zips.py` to rebuild them.
 
 ### Repeat for each agent
 Each agent has its own Project. Handoffs are manual: copy the output from one agent's conversation and paste it into the next agent's Project as input.
@@ -86,17 +86,7 @@ The same zip works in ChatGPT. Each agent becomes its own **ChatGPT Project**: t
 
 \*Limits at the time of writing; OpenAI changes them, so check the *File Uploads FAQ* in the ChatGPT help center if an upload is refused.
 
-**On the Free plan**, every agent has more than 5 files, and Free accounts can also only upload a few files per day. Combine the KB files into 3–5 text files before uploading. Keep each original file name as a heading, so the agent can still find files by name:
-
-```
-# FILE: KB_02b_Research_Module.md
-[contents of KB_02b_Research_Module.md]
-
-# FILE: KB_02b_Research_Actions.md
-[contents of KB_02b_Research_Actions.md]
-```
-
-A good grouping: (1) Module + Actions, (2) the agent's remaining KBs, (3) the three shared KBs.
+**On the Free plan**, every agent has more than 5 files, and Free accounts can also only upload a few files per day. Use the agent's **ChatGPT Free bundle** instead of the standard zip: [`install v2.1.0/chatgpt-free/`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.1.0/chatgpt-free) has one `[ID]_ChatGPT_Free.zip` per agent, with the same Instructions and the same KB content merged into 3–4 files (`Project Files (upload)`). Each original file starts with a `# FILE: KB_….md` heading, so the agent can still find files by name.
 
 **6. Tools** — Projects don't have a fixed capabilities setting; turn tools on in the chat (the **+** / tools menu in the message box) when an agent needs them:
 

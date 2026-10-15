@@ -51,7 +51,7 @@ The same zip works in ChatGPT. Each agent becomes its own **ChatGPT Project**, a
 2. **Download and unzip** the agent's zip.
 3. **Create a Project** — *Projects → New project* — and name it after the agent.
 4. **Instructions** — paste the file from `Project Instructions (paste)` into the Project's **Instructions**.
-5. **Files** — add everything in `Project Documents (upload)` to the Project's **Files**. *On the Free plan (5 files per Project), combine the KB files into 3–5 text files first, keeping each original file name as a heading (`# FILE: KB_…md`) — see `INSTALL.md` for details.*
+5. **Files** — add everything in `Project Documents (upload)` to the Project's **Files**. *On the Free plan (5 files per Project), download the agent's **ChatGPT Free bundle** from [`install v2.1.0/chatgpt-free`](https://github.com/culturehacklabs/ai-agent-system/tree/main/install%20v2.1.0/chatgpt-free) instead: same content, merged into 3–4 files.*
 6. **Tools** — turn tools on in the chat when needed. For **Agent 02b · Research**, turn on **web search** and **code / data analysis**; the second gives you the CSV Database as a downloadable file. For **Agent 03 · Understand**, code / data analysis lets it read the CSV and draw the Narrative Map. Other agents need no tools.
 7. **Test** with a prompt from the agent's `KB_[ID]_Prompting.md`, in a new chat inside the Project.
 

@@ -41,7 +41,7 @@ Everything in the checklist above also ships as a single **zip** in the repo's [
 
 **Five steps:** (1) download Agent 02b's zip; (2) create a new Claude Project named *"CHL Agent 02b — Research"*; (3) paste the Instructions text into the **Instructions** field; (4) upload everything in `Project Documents (upload)`; (5) start with a prompt from `KB_02b_Research_Prompting.md`.
 
-**On ChatGPT:** create a ChatGPT Project instead — paste the same Instructions text into its *Instructions* and add the same documents to its *Files* (on the Free plan, combine them into 5 files or fewer first). **On other chatbots:** use the platform's equivalent (e.g. a Gemini Gem). Turn on web search and a code/file tool in the chat (in ChatGPT: **web search** and **code / data analysis**). See the [Install guide](../install.md) for details.
+**On ChatGPT:** create a ChatGPT Project instead — paste the same Instructions text into its *Instructions* and add the same documents to its *Files* (on the Free plan, use the agent's ChatGPT Free bundle from `install v2.1.0/chatgpt-free`, which merges them into 3–4 files). **On other chatbots:** use the platform's equivalent (e.g. a Gemini Gem). Turn on web search and a code/file tool in the chat (in ChatGPT: **web search** and **code / data analysis**). See the [Install guide](../install.md) for details.
 
 ⚠ **One thing the zip can't do:** enabling web search. The zip carries the files; you still turn on Exa (Claude) or your platform's web search for this agent yourself (see the checklist above).
 
