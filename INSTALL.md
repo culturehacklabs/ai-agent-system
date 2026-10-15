@@ -103,7 +103,7 @@ The same zip works in ChatGPT. Each agent becomes its own **ChatGPT Project**: t
 
 Tool availability and usage limits are lower on the Free plan; if code/data analysis isn't available, the CSV comes as a table instead of a file.
 
-**7. Test** with a starter prompt from the agent's `KB_[ID]_Prompting.md`, in a new chat inside the Project.
+**7. Test** with a starter prompt from the agent's `KB_[ID]_Prompting.md`, in a new chat inside the Project. For Agent 02b there is a full test kit with sample inputs and pass criteria in [`tests/chatgpt/02b/`](tests/chatgpt/02b/README.md).
 
 ### Differences from Claude Projects
 
