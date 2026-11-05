@@ -106,7 +106,36 @@ Voices likely absent from digital data:
 ### Handoff Notes for Agent 02b
 [Any additional context: prior CHL research to reference,
 community voices to prioritise, known limitations]
+
+### Machine-Readable Parameters
+~~~big-listening-parameters
+{
+  "keywords":  ["[3–10 short search phrases from the What parameter]"],
+  "from":      "[YYYY-MM-DD — start of the When period]",
+  "to":        "[YYYY-MM-DD — end of the When period]",
+  "platforms": ["[platform names from the Where parameter, e.g. news, Reddit, Bluesky]"],
+  "languages": ["[ISO 639-1 codes, e.g. en, es]"],
+  "geography": "[geographic scope in a few words]"
+}
+~~~
 ```
+
+**Machine-Readable Parameters.** Always end the Big Listening Inquiry with this
+block, after the prose. It restates the five parameters for tools that run Big
+Listening on the practitioner's behalf; the prose remains the reference for
+people. Rules:
+
+- Fence it with `~~~big-listening-parameters` (or three backticks with the same
+  label) and put only valid JSON inside — no comments, no trailing commas.
+- `keywords`: what you would type into a search box — short phrases, not
+  sentences. Take them from the themes and sample keywords above.
+- `from` / `to`: the primary period as dates. If the period is open-ended, use
+  today's date for `to`.
+- `platforms`: the platforms named under Where, as plain names. Do not invent
+  tool or product names.
+- Leave out a field you cannot fill rather than guessing; `keywords` is the only
+  one that must be present.
+- If the practitioner edits the inquiry, update the block to match.
 
 ---
 
